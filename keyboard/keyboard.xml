@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="funct.css" type="text/css"?>
+<?xm-well_formed path="funct.dtd"?>
+<slides>
+ <lang>en</lang>
+  <addtranscript/>
+  <noslidenumbers/>
+  <footer>
+    <a href="https://illinois.edu"
+      alt="University of Illinois">
+      <img src="..\images\block-i.png"/>
+    </a>
+    Copyright &#169; 2021 University of Illinois
+  </footer>
+
+  <title>Keyboard Navigation and Focus Styling</title>
+  <person>
+    <name>Jon Gunderson</name>
+    <desc href="http://disability.illinois.edu">Disability Resources and Educational Services</desc>
+    <desc href="http://illinois.edu">University of Illinois at Urbana-Champaign</desc>
+    <desc href="mailto:jongund@illinois.edu">E-mail Jon Gunderson</desc>
+  </person>
+
+  <person>
+    <name>Lori Lane</name>
+    <desc href="http://disability.illinois.edu">Disability Resources and Educational Services</desc>
+    <desc href="http://illinois.edu">University of Illinois at Urbana-Champaign</desc>
+    <desc href="mailto:lorilane@illinois.edu">E-mail Lori Lane</desc>
+  </person>
+
+
+  <stylesheet media="screen">../css/bootstrap.min.css</stylesheet>
+  <stylesheet media="screen">../css/bootstrap-theme.min.css</stylesheet>
+  <stylesheet media="screen">../css/bootstrap-accessibility.css</stylesheet>
+  <stylesheet media="screen">../css/html-slides.css</stylesheet>
+
+  <script>../js/jquery-2.1.1.min.js</script>
+  <script>../js/bootstrap.min.js</script>
+  <script>../js/bootstrap-accessibility.min.js</script>
+  <script>../js/html-slides.js</script>
+
+  <slide>
+    <title>Learning Objectives</title>
+    <contents>
+      <ul>
+        <li>Tab key navigation</li>
+        <li>Cursor keys in operating widgets and menus</li>
+        <li>Visual focus styling</li>
+        <li>SkipTo Landmarks &amp; Headings browser extension</li>
+      </ul>
+      <script type="text/javascript">
+        slideShowURL()
+      </script>
+    </contents>
+    <transcript>
+      Something about the first goal.
+      Something about the second goal.
+      Something about the third goal.
+      Something about the fourth goal.
+    </transcript>
+  </slide>
+
+  <slide>
+    <title>Topic</title>
+    <contents>
+      <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+      </ul>
+    </contents>
+    <transcript>
+      Something about the first item.
+      Something about the second item.
+      Something about the third item.
+      Something about the fourth item.
+    </transcript>
+  </slide>
+
+</slides>
+
+

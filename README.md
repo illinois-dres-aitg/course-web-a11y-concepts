@@ -1,1 +1,1 @@
-# course-web-a11y-concepts
+# Course: Web Accessibility Concepts

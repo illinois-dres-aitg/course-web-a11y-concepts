@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="funct.css" type="text/css"?>
+<?xm-well_formed path="funct.dtd"?>
+<slides>
+ <lang>en</lang>
+  <addtranscript/>
+  <noslidenumbers/>
+  <footer>
+    <a href="https://illinois.edu"
+      alt="University of Illinois">
+      <img src="..\images\block-i.png"/>
+    </a>
+    Copyright &#169; 2021 University of Illinois
+  </footer>
+
+  <title>Keyboard Navigation and Focus Styling</title>
+  <person>
+    <name>Jon Gunderson</name>
+    <desc href="http://disability.illinois.edu">Disability Resources and Educational Services</desc>
+    <desc href="http://illinois.edu">University of Illinois at Urbana-Champaign</desc>
+    <desc href="mailto:jongund@illinois.edu">E-mail Jon Gunderson</desc>
+  </person>
+
+  <person>
+    <name>Lori Lane</name>
+    <desc href="http://disability.illinois.edu">Disability Resources and Educational Services</desc>
+    <desc href="http://illinois.edu">University of Illinois at Urbana-Champaign</desc>
+    <desc href="mailto:lorilane@illinois.edu">E-mail Lori Lane</desc>
+  </person>
+
+
+  <stylesheet media="screen">../css/bootstrap.min.css</stylesheet>
+  <stylesheet media="screen">../css/bootstrap-theme.min.css</stylesheet>
+  <stylesheet media="screen">../css/bootstrap-accessibility.css</stylesheet>
+  <stylesheet media="screen">../css/html-slides.css</stylesheet>
+
+  <script>../js/jquery-2.1.1.min.js</script>
+  <script>../js/bootstrap.min.js</script>
+  <script>../js/bootstrap-accessibility.min.js</script>
+  <script>../js/html-slides.js</script>
+
+  <slide>
+    <title>Learning Objectives</title>
+    <contents>
+      <ol>
+        <li>All functionalities are operable by the keyboard.</li>
+        <li>Tab key sequential navigation in web browsers.</li>
+        <li>Visual focus styling.</li>
+        <li>Bypass blocks of repetitive content.</li>
+        <li>Custom widgets and menus.</li>
+        <li>Keyboard related requirements of the W3C <a href="https://w3.org/TR/WCAG">Web Content Accessibility Guidelines</a>.</li>
+      </ol>
+      <script type="text/javascript">
+        slideShowURL()
+      </script>
+    </contents>
+    <transcript>
+      Welcome to the web accessibility concepts course, this session you will be learning about the importance of keyboard accessibility requirements.
+
+      Keyboard navigation is the bedrock of all software and web accessibility guidelines including the W3C Web Content Accessibility Guidelines that us used as the international standard for web accessibility laws.
+
+      Keyboard support includes being able to both operate a web page using only the keyboard and styling the focus so people can perceive the location on the page with keyboard focus.
+
+      Keyboard support is often misunderstood and ignored in designing online resources, since most designs and design tools focus on the dominate modes of interaction of using a mouse pointer or by touching a screen.
+
+      Many people with disabilities though cannot use mouse or touch devices because they do not have the physical capabilities to move and operate a mouse, or the ability to press their finger on a touch screen.  People with visual impairment find it difficult or often impossible to track the location of the pointer or perceive where to touch on a screen.
+
+      The objectives of this session is to introduce important concepts of keyboard support, which include:
+
+      1. Sequential <kbd>Tab</kbd> keyboard navigation in browsers.
+
+      2. Visual focus styling of the content of the page with focus.
+
+      3. The ability to bypass blocks of repetitive content on web pages to get the main content.
+
+      4. Keyboard interaction with menus and custom web widgets.
+
+      5. All functionalities are operable through the keyboard.
+
+      6. W3C Web Content Accessibility Guideline for keyboard accessibility.
+
+    </transcript>
+  </slide>
+
+  <slide>
+    <title>Sequential navigation using the <kbd>TAB</kbd> key</title>
+    <contents>
+      <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+      </ul>
+    </contents>
+    <transcript>
+      Something about the first item.
+      Something about the second item.
+      Something about the third item.
+      Something about the fourth item.
+    </transcript>
+  </slide>
+
+  <slide>
+    <title>Elements that are part of TAB order of a page</title>
+    <contents>
+      <ul>
+        <li>Links</li>
+        <li>Standard HTML form controls</li>
+        <li>Elements with a <code>tabindex</code> attribute with a value of zero.</li>
+      </ul>
+    </contents>
+    <transcript>
+      Something about the first item.
+      Something about the second item.
+      Something about the third item.
+      Something about the fourth item.
+    </transcript>
+  </slide>
+
+
+
+  <slide>
+    <title>Visual keyboard focus styling</title>
+    <contents>
+      <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+      </ul>
+    </contents>
+    <transcript>
+      Something about the first item.
+      Something about the second item.
+      Something about the third item.
+      Something about the fourth item.
+    </transcript>
+  </slide>
+
+  <slide>
+    <title>Browser differences in keyboard focus styling</title>
+    <contents>
+      <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+      </ul>
+    </contents>
+    <transcript>
+      Something about the first item.
+      Something about the second item.
+      Something about the third item.
+      Something about the fourth item.
+    </transcript>
+  </slide>
+
+  <slide>
+    <title>High contrast settings and keyboard focus styling</title>
+    <contents>
+      <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+      </ul>
+    </contents>
+    <transcript>
+      Something about the first item.
+      Something about the second item.
+      Something about the third item.
+      Something about the fourth item.
+    </transcript>
+  </slide>
+
+  <slide>
+    <title>Best practices in keyboard focus styling</title>
+    <contents>
+      <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+      </ul>
+    </contents>
+    <transcript>
+      Something about the first item.
+      Something about the second item.
+      Something about the third item.
+      Something about the fourth item.
+    </transcript>
+  </slide>
+
+
+  <slide>
+    <title>Bypass blocks of content with "Skip To Main" link.</title>
+    <contents>
+      <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+      </ul>
+    </contents>
+    <transcript>
+      Something about the first item.
+      Something about the second item.
+      Something about the third item.
+      Something about the fourth item.
+    </transcript>
+  </slide>
+
+  <slide>
+    <title></title>
+    <contents>
+      <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+      </ul>
+    </contents>
+    <transcript>
+      Something about the first item.
+      Something about the second item.
+      Something about the third item.
+      Something about the fourth item.
+    </transcript>
+  </slide>
+
+  <slide>
+    <title></title>
+    <contents>
+      <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+      </ul>
+    </contents>
+    <transcript>
+      Something about the first item.
+      Something about the second item.
+      Something about the third item.
+      Something about the fourth item.
+    </transcript>
+  </slide>
+
+
+  <slide>
+    <title>All functionalities are operable through the keyboard.</title>
+    <contents>
+      <ul>
+        <li><a href="https://www.blackdogchampaign.com/">Adding an item from the online menu:</a>
+          <ul>
+            <li>Menu items are not part of the <kbd>tab</kbd> order of the page.</li>
+          </ul>
+        </li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+      </ul>
+    </contents>
+    <transcript>
+      Something about the first item.
+      Something about the second item.
+      Something about the third item.
+      Something about the fourth item.
+    </transcript>
+  </slide>
+
+
+  <slide>
+    <title> W3C Web Content Accessibility Guideline for keyboard accessibility</title>
+    <contents>
+      <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+      </ul>
+    </contents>
+    <transcript>
+      Something about the first item.
+      Something about the second item.
+      Something about the third item.
+      Something about the fourth item.
+    </transcript>
+  </slide>
+</slides>
+
+

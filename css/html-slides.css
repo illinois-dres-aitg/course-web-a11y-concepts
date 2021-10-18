@@ -14,7 +14,7 @@
 a {
     display: inline-block;
     padding: 2px;
-    margin: 1px;
+    margin: 2px;
     border: none;
     border-radius: 4px;
 }
@@ -26,9 +26,11 @@ nav a.btn {
 }
 
 
-a:focus {
+a:focus,
+a:hover {
     margin: 0;
-    border: 1px dashed black;
+    border: 2px solid black;
+    background: #def;
 }
 
 summary {
@@ -112,13 +114,11 @@ nav ul li {
 }
 
 
+.navbar-default .navbar-nav>li>a:hover,
 .navbar-default .navbar-nav>li>a:focus {
-    outline: solid thin #AAAAAA;
+    outline: solid 2px #AAAAAA;
 }
 
-.navbar-default .navbar-nav>li>a:hover {
-    outline: none;
-}
 
 .navbar-default .navbar-nav>li>a:focus,
 .navbar-default .navbar-nav>li>a:hover {
@@ -310,7 +310,7 @@ summary#id-slide-transcript-button {
 }
 
 summary#id-slide-transcript-button:focus {
-    outline: black dotted 2px;
+    outline: black solid 2px;
     outline-offset: 2px;
 }
 

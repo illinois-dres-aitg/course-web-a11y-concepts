@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="funct.css" type="text/css"?>
+<?xm-well_formed path="funct.dtd"?>
+<slides>
+  <lang>en</lang>
+  <footer>
+    <a href="https://illinois.edu"
+      alt="University of Illinois">
+      <img src="..\images\block-i.png"/>
+    </a>
+    Copyright &#169; 2021 University of Illinois
+  </footer>
+
+  <title>Headings and Page Titles</title>
+
+  <person>
+    <name>Jon Gunderson</name>
+    <desc href="http://disability.illinois.edu">Disability Resources and Educational Services</desc>
+    <desc href="http://illinois.edu">University of Illinois at Urbana-Champaign</desc>
+    <desc href="mailto:jongund@illinois.edu">E-mail Jon Gunderson</desc>
+  </person>
+
+  <person>
+    <name>Lori Lane</name>
+    <desc href="http://disability.illinois.edu">Disability Resources and Educational Services</desc>
+    <desc href="http://illinois.edu">University of Illinois at Urbana-Champaign</desc>
+    <desc href="mailto:lorilane@illinois.edu">E-mail Lori Lane</desc>
+  </person>
+
+
+  <stylesheet media="screen">../css/bootstrap.min.css</stylesheet>
+  <stylesheet media="screen">../css/bootstrap-theme.min.css</stylesheet>
+  <stylesheet media="screen">../css/bootstrap-accessibility.css</stylesheet>
+  <stylesheet media="screen">../css/html-slides.css</stylesheet>
+
+  <script>../js/jquery-2.1.1.min.js</script>
+  <script>../js/bootstrap.min.js</script>
+  <script>../js/bootstrap-accessibility.min.js</script>
+  <script>../js/html-slides.js</script>
+
+  <slide>
+    <title>Overview</title>
+    <contents>
+      <ul>
+        <li>Headings</li>
+        <li>Titling</li>
+      </ul>
+
+      <script type="text/javascript">
+        slideShowURL()
+      </script>
+
+    </contents>
+  </slide>
+
+  <slide>
+    <title>Heading Elements and Page Title</title>
+    <contents>
+      <ul>
+        <li>Title element</li>
+        <li>Headings (H1-H6)</li>
+        <li><code>role="heading"</code> with <code>aria-level</code> property</li>
+      </ul>
+
+      <h2>Related WCAG 2.0 Success Criteria</h2>
+      <ul>
+        <li><a href="https://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic" target="_specification">1.3.1 Info and Relationships</a></li>
+        <li><a href="https://www.w3.org/TR/WCAG20/#navigation-mechanisms-skip" target="_specification">2.4.1 Bypass Blocks</a></li>
+        <li><a href="https://www.w3.org/TR/WCAG20/#navigation-mechanisms-title" target="_specification">2.4.2 Page Titled</a></li>
+        <li><a href="https://www.w3.org/TR/WCAG20/#navigation-mechanisms-descriptive" target="_specification">2.4.6 Headings and Labels</a></li>
+      </ul>
+    </contents>
+  </slide>
+
+  <slide>
+    <title>Heading Accessibility</title>
+    <contents>
+      <ul>
+        <li>Screen readers provide header navigation commands and list of header views of a document.</li>
+        <li>Headings shoudl be used to identify the sections and sub-sections of a web page.</li>
+        <li>Headings should be nested properly to accurately convey the section and sub-sections of a web page.</li>
+        <li><code>h1</code> element should be reserved to mark the beginning of the main content of a web page.</li>
+        <li>Headings can and should be used to label associated landmarks using <code>aria-labelledby</code> attribute.</li>
+        <li>Headings can be hidden visually, but still provide navigaional markers for screen readers.</li>
+      </ul>
+
+
+    </contents>
+  </slide>
+
+  <slide>
+    <title>Use of Headings (H1-H6) in ARIA Landmarks</title>
+    <contents>
+        <h2><code>main</code> landmarks</h2>
+        <ul>
+          <li>Should contain <code>h1</code> element at the beginning of section.</li>
+          <li><code>h1</code> element content describes the content or the purpose of the page.</li>
+          <li>Provides a redundant means for assistive technology users to navigate to main content.</li>
+          <li>Use headers in a structural way or in combination with HTML5 section elements.</li>
+          <li>If more than one <code>main</code> landmark on the page use <code>aria-labelledby</code> to use the heading as accessible name to the landmark.</li>
+        </ul>
+
+        <h2><code>navigation</code> and <code>complementary </code>landmarks</h2>
+        <ul>
+          <li>Should contain <code>h2</code> element at the beginning of section.</li>
+          <li><code>h2</code> element content describes the content or the purpose of the page.</li>
+          <li>Provides a redundant means for assistive technology users to navigate to content.</li>
+          <li>If more than one <code>navigation</code> or <code>complementary </code> landmark on the page use <code>aria-labelledby</code> to use label the landmark.</li>
+        </ul>
+
+        <h2><code>contentinfo</code> landmarks</h2>
+        <ul>
+          <li>May contain <code>h2</code> element at the beginning of section.</li>
+          <li><code>h2</code> element identifies the section as footer information.</li>
+          <li>Provides a redundant means for assistive technology users to navigate to content.</li>
+        </ul>
+
+        <h2><code>banner</code> landmark</h2>
+        <ul>
+          <li>May contain <code>h1</code> element at the beginning of section.</li>
+          <li><code>h1</code> element identifies the website information.</li>
+          <li>Provides a redundent means for assistive technology users to orient to the website.</li>
+        </ul>
+
+        <h2><code>region</code> landmarks</h2>
+        <ul>
+          <li>Should contain an <code>h2-h6</code> element at the beginning of section, which has appropriate level.</li>
+          <li><code>h2-h6</code> element identifies the section information.</li>
+          <li>The heading element should be used as the label for the <code>region</code> using <code>aria-labelledby</code>.</li>
+          <li>Provides a redundent means for assistive technology users to orient to the website.</li>
+        </ul>
+
+    </contents>
+  </slide>
+
+  <slide>
+    <title>JAWS Heading and Title Support</title>
+    <contents>
+
+      <table class="table table-striped table-hover" aria-labelledby="h1_title">
+        <thead>
+          <tr>
+            <th>Keyboard Command</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><kbd>Insert</kbd>+<kbd>Control</kbd>+<kbd>Z</kbd></td>
+            <td>
+              <ul>
+                <li>Toggle on/off virtual JAWS cursor for reading web pages.</li>
+                <li>Must be in virtual mode for the following commands to work.</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td><kbd>Insert</kbd>+<kbd>F6</kbd></td>
+            <td>Heading List</td>
+          </tr>
+          <tr>
+            <td><kbd>H</kbd></td>
+            <td>Next heading</td>
+          </tr>
+          <tr>
+            <td><kbd>Shift</kbd>+<kbd>H</kbd></td>
+            <td>Previous heading</td>
+          </tr>
+          <tr>
+            <td><kbd>1-6</kbd></td>
+            <td>Next heading at the corresponding level</td>
+          </tr>
+          <tr>
+            <td><kbd>Insert</kbd>+<kbd>T</kbd></td>
+            <td>Read page title</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>Feature Overview</h2>
+
+      <ul>
+        <li>In virtual you can move sequentially through the headings on a page or view a list of headings.</li>
+        <li>When navigating a web page JAWS announces heading information when the virtual or PC cursor is on a heading.</li>
+      </ul>
+
+      <h2>Other Jaws Command Resources</h2>
+      <ul>
+        <li><a href="http://accessibility.psu.edu/jawscommands" target="_specification">Penn State: JAWS commands for web</a></li>
+        <li><a href="http://webaim.org/resources/shortcuts/jaws" target="_specification">WebAIM: JAWS commands for web</a></li>
+        <li><a href="http://www.freedomscientific.com/Training/Surfs-up/Quick_Keys.htm" target="_specification">Freedom Scientific: JAWS commands for web</a></li>
+        <li><a href="https://dequeuniversity.com/screenreaders/jaws-keyboard-shortcuts" target="_specification">Deque University: JAWS commands</a></li>
+      </ul>
+
+    </contents>
+  </slide>
+
+  <slide>
+    <title>NVDA Heading and Title Support</title>
+    <contents>
+
+      <table class="table table-striped table-hover" aria-labelledby="h1_title">
+        <thead>
+          <tr>
+            <th>Keyboard Command</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><kbd>Insert</kbd>+<kbd>Space</kbd></td>
+            <td>
+              <ul>
+                <li>Toggle between focus mode and browse mode.</li>
+                <li>Must be in browse mode for the following commands to work.</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td><kbd>Insert</kbd>+<kbd>F7</kbd></td>
+            <td>List of Headings</td>
+          </tr>
+          <tr>
+            <td><kbd>H</kbd></td>
+            <td>Next heading</td>
+          </tr>
+          <tr>
+            <td><kbd>Shift</kbd>+<kbd>H</kbd></td>
+            <td>Previous heading</td>
+          </tr>
+          <tr>
+            <td><kbd>1-6</kbd></td>
+            <td>Next heading at the corresponding level</td>
+          </tr>
+          <tr>
+            <td><kbd>Insert</kbd>+<kbd>T</kbd></td>
+            <td>Read page title</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>Feature Overview</h2>
+      <ul>
+        <li>In browse mode you can move sequentially or by level through the headings on the page or view a list of links.</li>
+        <li>When navigating the content of a web page NVDA announces heading information is announced.</li>
+      </ul>
+
+      <h2>Other NVDA Command Resources</h2>
+      <ul>
+        <li><a href="http://accessibility.psu.edu/nvda" target="_specification">Penn State: NVDA Keyboard Commands</a></li>
+        <li><a href="http://webaim.org/resources/shortcuts/nvda" target="_specification">Webaim: NVDA Keyboard Commands</a></li>
+        <li><a href="http://community.nvda-project.org/documentation/userGuide.html#toc40" target="_specification">NVDA: Web Browse Keyboard Commands</a></li>
+        <li><a href="https://dequeuniversity.com/screenreaders/nvda-keyboard-shortcuts" target="_specification">Deque University: NVDA Commands</a></li>
+      </ul>
+
+    </contents>
+  </slide>
+
+  <slide>
+    <title>Voice Over Heading and Title Support</title>
+    <contents>
+
+      <table class="table table-striped table-hover" aria-labelledby="h1_title">
+        <thead>
+          <tr>
+            <th>Keyboard Command</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><kbd>Command</kbd>+<kbd>F5</kbd></td>
+            <td>Start Voice Over on MacOS</td>
+          </tr>
+          <tr>
+            <td><kbd>Control</kbd>+<kbd>Option</kbd></td>
+            <td>Voice Over (VO) command</td>
+          </tr>
+          <tr>
+            <td><kbd>Control</kbd>+<kbd>Option</kbd>+<kbd>+</kbd></td>
+            <td>Toggle VO key lock on and off</td>
+          </tr>
+          <tr>
+            <td><kbd>Control</kbd>+<kbd>Option</kbd>+<kbd>U</kbd></td>
+            <td>Open rotor to navigate content on the web page and use the left or right arrow keys to show the list of headings.</td>
+          </tr>
+          <tr>
+            <td><kbd>VO</kbd>+<kbd>Command</kbd>+<kbd>H</kbd></td>
+            <td>Next heading</td>
+          </tr>
+          <tr>
+            <td><kbd>VO</kbd>+<kbd>Shift</kbd>+<kbd>Command</kbd>+<kbd>H</kbd></td>
+            <td>Previous heading</td>
+          </tr>
+          <tr>
+            <td><kbd>VO</kbd>+<kbd>F2</kbd></td>
+            <td>Read page title</td>
+          </tr>
+
+        </tbody>
+      </table>
+
+      <h2>Feature Overview</h2>
+      <ul>
+        <li>Voice Over allows you to view a list of headings.</li>
+        <li>When navigating a web page Voice Over announces heading information when the browse or focus cursor enters a new heading.</li>
+      </ul>
+
+      <h2>Other Voice Over Command Resources</h2>
+
+      <ul>
+        <li><a href="http://accessibility.psu.edu/voiceover" target="_specification">Penn State: Voice Over for OS X</a></li>
+        <li><a href="http://www.apple.com/voiceover/info/guide/_1131.html" target="_specification">Apple Voice Over Commands</a></li>
+        <li><a href="https://dequeuniversity.com/screenreaders/voiceover-keyboard-shortcuts#vo-mac-basics" target="_specification">Deque University: Voice Over Commands</a></li>
+      </ul>
+
+    </contents>
+  </slide>
+
+
+  <slide>
+    <title>Hiding Headings (H1-H6) and Other Content</title>
+    <contents>
+
+      <h2 id="id_aria">Hiding content graphically and from Assistive Technology</h2>
+      <table class="table table-striped" aria-labelledby="id_aria">
+        <thead>
+          <tr>
+            <th>Technology</th>
+            <th>Technique</th>
+            <th>Assistive Technology</th>
+            <th>Graphical Rendering</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>CSS</td>
+            <td><code>display: none</code></td>
+            <td>hidden</td>
+            <td>hidden</td>
+          </tr>
+          <tr>
+            <td>CSS</td>
+            <td><code>visibility: hidden</code></td>
+            <td>hidden</td>
+            <td>hidden</td>
+          </tr>
+          <tr>
+            <td>CSS</td>
+            <td><code>position: absolute</code><br/>
+              <code>top: -30em</code><br/>
+              <code>left: -300em</code><br/>
+            </td>
+            <td><strong>Visible</strong></td>
+            <td>hidden</td>
+          </tr>
+          <tr>
+            <td>CSS</td>
+            <td><code>font-size: 1px</code><br/>
+              <code>line-height: 1px</code><br/>
+            </td>
+            <td><strong>Visible</strong></td>
+            <td>hidden (almost)</td>
+          </tr>
+          <tr>
+            <td>HTML5</td>
+            <td><code>hidden</code> attribute</td>
+            <td>hidden</td>
+            <td>hidden</td>
+          </tr>
+          <tr>
+            <td>ARIA 1.0</td>
+            <td><code>aria-hidden=true</code> attribute</td>
+            <td>hidden</td>
+            <td><strong>Visible</strong></td>
+          </tr>
+        </tbody>
+      </table>
+    </contents>
+  </slide>
+
+
+    <slide>
+    <title>Coding Headings: h1-h6 Elements</title>
+    <contents>
+
+        <h2>Webedit Configuration</h2>
+        <dl>
+          <dt>Login to <a href="https://webedit.disability.illinois.edu/accounts/login/">WebEdit</a> (Create an account if you don't have one)</dt>
+          <dd>Copy example using the link below</dd>
+          <dd>Change title "Coding Heading: Adding Headings and Adjusting Levels for Proper Nesting"</dd>
+        </dl>
+
+        <p><a href="https://webedit.disability.illinois.edu/user/jongund/structure-problem-3/copy/" target="_webedit">WebEdit template for adjusting the heading structure of a web page</a></p>
+
+        <p><a href="https://webedit.disability.illinois.edu/user/jongund/heading-1/output/" target="_example">Example: Properly included and nested headings"</a></p>
+
+    </contents>
+  </slide>
+
+  <slide>
+    <title>Titling a Web Resource</title>
+    <contents>
+
+      <details>
+        <summary>Accessible <code>title</code> element</summary>
+        <ul>
+          <li>Identify website</li>
+          <li>Identify page in website</li>
+        </ul>
+      </details>
+
+      <h2>Example</h2>
+
+      <p><a href="http://disability.illinois.edu/academic-support">DRES Academic Support</a></p>
+
+      <p class="code">
+        &lt;head&gt;<br/>
+        &#160;&#160;&lt;title&gt;Academic Support | Disability Resources &amp; Educational Services - University of Illinois &lt;title&gt;<br/><br/>
+        &#160;&#160;....<br/><br/>
+        &lt;/head&gt;
+
+      </p>
+    </contents>
+  </slide>
+
+</slides>
+
+

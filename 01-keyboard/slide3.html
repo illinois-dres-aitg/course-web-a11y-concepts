@@ -2,7 +2,7 @@
 <html lang="en">
    <head>
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-      <title>Slide 3: Elements that are part of TAB order of a page</title>
+      <title>Slide 3: Sequential Navigation: Links and Form Controls</title>
       <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
       <link rel="stylesheet" type="text/css" href="../css/bootstrap-theme.min.css">
       <link rel="stylesheet" type="text/css" href="../css/bootstrap-accessibility.css">
@@ -28,7 +28,7 @@
                   <li><a id="ID_SLIDE_NEXT" href="slide4.html" title="Slide 4">
                         Next
                       </a></li>
-                  <li><a id="ID_SLIDE_LAST" href="slide12.html" title="Slide 12">
+                  <li><a id="ID_SLIDE_LAST" href="slide13.html" title="Slide 13">
                         Last
                       </a></li>
                </ul>
@@ -44,12 +44,53 @@
          <div class="row">
             <div class="col-md-1"></div>
             <div class="col-md-9">
-               <h1 id="h1_title" class="title">Elements that are part of TAB order of a page</h1>
-               <ul>
-                  <li>Links</li>
-                  <li>Standard HTML form controls</li>
-                  <li>Elements with a <code>tabindex</code> attribute with a value of zero.</li>
-               </ul>
+               <h1 id="h1_title" class="title">Sequential Navigation: Links and Form Controls</h1>
+               <table class="table table-striped" aria-label="Interactive elements part of tab sequence">
+                  <thead>
+                     <tr>
+                        <th>Element</th>
+                        <th>Description</th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <tr>
+                        <td>
+              Links
+            </td>
+                        <td>
+                           <ul>
+                              <li>
+                  Links are the foundation of how the web works, allowing people to move easily between web pages by clicking on links.
+                </li>
+                              <li>
+                  Any link with an <code>href</code> attribute to  URL becomes part of the tab sequence of a web page.
+                </li>
+                              <li>
+                  <strong>Common Problem:</strong> Some web sites do not always use the <code>href</code> attribute to provide links to other pages.  They use something called "events" instead of the <code>href</code> attribute, in this case links often will not be part of the tab sequence and not be accessible.
+                </li>
+                           </ul>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td>
+              Form Controls
+            </td>
+                        <td>
+                           <ul>
+                              <li>
+                  Buttons, radio button groups, checkboxes, text boxes, select and text area elements are some of the form controls found on web pages and by default are part of the tab sequence of the web page.
+                </li>
+                              <li>
+                  Radio button groups, text boxes, select and text area elements also support the cursor keys for navigating options or content.
+                </li>
+                              <li>
+                  <strong>Common Problem:</strong> Some web sites use custom controls, instead of the standard HTML form controls to create web forms.  These custom controls often do not include markup to include them in the tab sequence of the page.
+                </li>
+                           </ul>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
             </div>
             <div class="col"></div>
          </div>
@@ -63,10 +104,7 @@
                           Audio Transcript
                         </summary>
                   <div class="slide-transcript">
-      Something about the first item.
-      Something about the second item.
-      Something about the third item.
-      Something about the fourth item.
+      Needs to be completed
     </div>
                </details>
             </div>

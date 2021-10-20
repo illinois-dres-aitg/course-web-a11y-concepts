@@ -142,7 +142,7 @@
             <td>
               <ul>
                 <li>
-                  Links are the foundation of how the web works, allowing people to move easily between web pages by clicking on links.
+                  Links (e.g. <code>a</code> elements) are the foundation of how the web works, allowing people to move easily between web pages by clicking on links.
                 </li>
                 <li>
                   Any link with an <code>href</code> attribute to  URL becomes part of the tab sequence of a web page.
@@ -180,9 +180,8 @@
     <title>Sequential Navigation: Custom HTML Widgets</title>
     <contents>
       <ul>
-        <li><a href="https://parking.illinois.edu/rules-regulations">Inaccessible Menu and Accordion</a></li>
-        <li><a href="">Accessible Accordion</a></li>
-        <li>Navigation Menus</li>
+        <li><a href="../html-examples/disclosure/disclosure-faq.html">Disclosure FAQs</a></li>
+        <li><a href="../html-examples/disclosure/disclosure-navigation.html">Disclosure Navigation Menu</a></li>
         <li>Date pickers</li>
         <li>Image carousels</li>
       </ul>

@@ -10,7 +10,7 @@
 
   <!--  js and css for the disclosure example. -->
   <link href="css/disclosure-navigation.css" rel="stylesheet">
-  <script src="js/disclosure-navigation.js" type="text/javascript"></script>
+  <script src="js/disclosure-navigation-inaccessible.js" type="text/javascript"></script>
 
 </head>
 <body>
@@ -25,14 +25,15 @@
     </nav>
   </header>
   <main>
-    <h1>Disclosure Navigation Menu: Accessible</h1>
+    <h1>Disclosure Navigation Menu: Inaccessible</h1>
 
     <p>
-      The following example demonstrates using the
-      <a href=""https://w3c.github.io/aria-practices#disclosure">disclosure design pattern</a>
-      to show and hide dropdown lists of links in a navigation bar for a mythical university web site.
-      Each disclosure button represents a section of the web site, and expanding it shows a list of links to pages within that section.
+      The following example demonstrates the lack of keyboard support for opening and closing the lists of navigational links.
     </p>
+    <h2>Accessibility Issues</h2>
+    <ul>
+      <li>No keyboard support to open/close the navigational links.</li>
+    </ul>
 
     <p>Alternatives:</p>
     <ul class="alternatives">
@@ -40,7 +41,7 @@
         <a href="disclosure-navigation.html" aria-current="true">Accessible disclosure navigation menu</a>
       </li>
       <li>
-        <a href="disclosure-navigation-inaccessible.html">Inaccessible disclosure navigation menu</a>
+        <a href="disclosure-navigation-inaccessible.html" aria-current="true">Inaccessible disclosure navigation menu</a>
       </li>
       <li>
         <a href="disclosure-navigation-top-level-links.html">Accessible disclosure navigation menu with top level links</a>
@@ -53,7 +54,7 @@
         <nav aria-label="Mythical University">
           <ul id="exTest" class="disclosure-nav">
             <li>
-              <button type="button" aria-expanded="true" aria-controls="id_about_menu">About <span aria-hidden="true"></span></button>
+              <div class="button">About <span></span></div>
               <ul id="id_about_menu">
                 <li>
                   <a href="#mythical-Overview">Overview</a>
@@ -70,7 +71,7 @@
               </ul>
             </li>
             <li>
-              <button type="button" aria-expanded="true" aria-controls="id_admissions_menu">Admissions<span aria-hidden="true"></span></button>
+              <div class="button">Admissions<span></span></div>
               <ul id="id_admissions_menu">
                 <li>
                   <a href="#mythical-Apply">Apply</a>
@@ -93,7 +94,7 @@
               </ul>
             </li>
             <li>
-              <button type="button" aria-expanded="true" aria-controls="id_academics_menu">Academics<span aria-hidden="true"></span></button>
+              <div class="button">Academics<span></span></div>
               <ul id="id_academics_menu">
                 <li>
                   <a href="#mythical-Colleges">Colleges &amp; Schools</a>

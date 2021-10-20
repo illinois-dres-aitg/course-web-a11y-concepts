@@ -30,14 +30,11 @@
   top: 100%;
 }
 
-.disclosure-nav .button {
-}
-
-.disclosure-nav button,
-.disclosure-nav .button {
+.disclosure-nav > li > a,
+.disclosure-nav button {
   font-family: helvetica, arial, sans-serif;
   margin: 0;
-  padding: 4px 42px 4px 6px;
+  padding: 4px 6px;
   border: none;
   text-align: left;
   background-color: transparent;
@@ -45,32 +42,30 @@
   color: white;
   font-size: 125%;
   position: relative;
+  display: inline-block;
+  text-decoration: none;
 }
 
-.disclosure-nav button span,
-.disclosure-nav .button span {
+.disclosure-nav button span {
   position:  absolute;
   right: 4px;
 }
 
 .disclosure-nav button:focus span,
-.disclosure-nav button:hover span,
-.disclosure-nav .button:hover span {
+.disclosure-nav button:hover span {
   right: 2px;
 }
 
-.disclosure-nav button span::after,
-.disclosure-nav .button span::after {
+.disclosure-nav button span::after {
   content: '▼';
   color: currentColor;
 }
 
-.disclosure-nav button[aria-expanded="true"] span::after,
-.disclosure-nav .button.expanded span::after {
+.disclosure-nav button[aria-expanded="true"] span::after {
   content: '▲';
 }
 
-.disclosure-nav ul a {
+.disclosure-nav a {
   margin: 0;
   padding: 4px 6px;
   border: 0;
@@ -78,6 +73,7 @@
   display: block;
   text-decoration: underline;
   white-space: nowrap;
+  display: inline-block;
 }
 
 .disclosure-nav > li ul {
@@ -91,20 +87,14 @@
 
 .disclosure-nav button:focus,
 .disclosure-nav button:hover,
-.disclosure-nav .button:hover,
-.disclosure-nav ul a:hover,
-.disclosure-nav ul a:focus {
+.disclosure-nav a:hover,
+.disclosure-nav a:focus {
   padding: 2px 4px;
   border: 2px solid white;
   border-radius: 5px;
   outline: none;
 }
 
-.disclosure-nav button:focus,
-.disclosure-nav .button:hover,
-.disclosure-nav button:hover {
-  padding: 2px 40px 2px 4px;
-}
 
 .disclosure-page-content {
   padding: 0.5em;

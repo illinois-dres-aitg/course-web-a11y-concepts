@@ -146,15 +146,112 @@ class DisclosureNav {
   }
 }
 
+class optionsNav {
+  constructor(optionNode, disclosureNavs) {
+
+    this.exampleNode = document.getElementById('ex1');
+
+    this.disclosureNavs = disclosureNavs;
+
+    this.radioNodes = optionNode.querySelectorAll('input[type=radio]');
+
+    for (let i = 0; i < this.radioNodes.length; i += 1) {
+      let radioNode = this.radioNodes[i];
+      radioNode.addEventListener('click', this.onClick.bind(this));
+      radioNode.addEventListener('focus', this.onFocus.bind(this));
+      radioNode.addEventListener('blur', this.onBlur.bind(this));
+
+      if (radioNode.checked) {
+        this.setKeyboardOption(radioNode);
+      }
+    }
+  }
+
+  setButtonTabindex(value) {
+    for (let i = 0; i < this.disclosureNavs.length; i += 1) {
+      let rootNode = this.disclosureNavs[i].rootNode;
+      let buttonNodes = rootNode.querySelectorAll('button');
+      for (let j = 0; j < buttonNodes.length; j += 1) {
+        buttonNodes[j].tabIndex = value;
+      }
+    }
+  }
+
+  setKeyboardOption(inputNode) {
+
+    for (let i = 0; i < this.radioNodes.length; i += 1) {
+      let radioNode = this.radioNodes[i];
+      if (radioNode === inputNode) {
+        radioNode.parentNode.classList.add('checked');
+      } else {
+        radioNode.parentNode.classList.remove('checked');
+      }
+    }
+
+    this.setButtonTabindex(0);
+    this.exampleNode.classList.remove('no-focus');
+    this.exampleNode.classList.remove('default-focus');
+    this.exampleNode.classList.remove('author-focus');
+
+    switch(inputNode.value) {
+      case 'nokeyboard':
+        // disable keyboard support
+        this.setButtonTabindex(-1);
+        this.exampleNode.classList.add('no-focus');
+        break;
+
+      case 'keyboard+none':
+        this.exampleNode.classList.add('no-focus');
+        break;
+
+      case 'keyboard+default':
+        this.exampleNode.classList.add('default-focus');
+        break;
+
+      case 'keyboard+author':
+        this.exampleNode.classList.add('author-focus');
+        break;
+
+      default:
+        break;
+    }
+  }
+
+  onClick(event) {
+    let tgt = event.currentTarget;
+    this.setKeyboardOption(tgt);
+  }
+
+  onFocus(event) {
+    let tgt = event.currentTarget;
+    tgt.parentNode.classList.add('focus');
+  }
+
+  onBlur(event) {
+    let tgt = event.currentTarget;
+    tgt.parentNode.classList.remove('focus');
+  }
+
+}
+
 /* Initialize Disclosure Menus */
 
 window.addEventListener(
   'load',
   function () {
-    var disclosureNavs = document.querySelectorAll('.disclosure-nav');
+    var navs = document.querySelectorAll('.disclosure-nav');
+    this.disclosureNavs = [];
 
-    for (var i = 0; i < disclosureNavs.length; i++) {
-      new DisclosureNav(disclosureNavs[i]);
+    for (var i = 0; i < navs.length; i++) {
+      this.disclosureNavs.push(new DisclosureNav(navs[i]));
+    }
+
+    var optionNode = document.querySelector(
+      'section.options'
+    );
+
+    if (optionNode) {
+      new optionsNav(optionNode, disclosureNavs);
     }
   },
   false

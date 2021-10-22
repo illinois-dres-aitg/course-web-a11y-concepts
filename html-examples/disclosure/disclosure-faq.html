@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
 <meta charset="utf-8" />
-<title>Example Disclosure (Show/Hide) for Answers to Frequently Asked Questions | Web Accessibility Concepts</title>
+<title>Disclosure (Show/Hide) for Answers to Frequently Asked Questions | Web Accessibility Concepts</title>
 
   <!--  Core js and css shared by all examples; do not modify when using this template. -->
   <link rel="stylesheet" href="../css/core.css">
   <script src="https://paypal.github.io/skipto/downloads/js/skipto.min.js"></script>
   <!--  js and css for the disclosure example. -->
   <link href="css/disclosure-faq.css" rel="stylesheet">
-  <script src="js/disclosure-button.js"></script>
+  <script src="js/disclosure-faq.js"></script>
 
 </head>
 <body>
@@ -19,29 +19,53 @@
       <ul>
         <li><a href="..">All Examples</a> | </li>
         <li><a href="disclosure-faq.html"  aria-current="true">FAQ</a> | </li>
-        <li><a href="disclosure-navigation.html">Navigation</a></li>
+        <li><a href="disclosure-navigation.html">Navigation</a> | </li>
+        <li><a href="disclosure-navigation-top-level-links.html">Navigation Top Level Links</a></li>
       </ul>
     </nav>
   </header>
   <main>
-    <h1>FAQ Example: Accessible</h1>
+    <h1>Disclosure Buttons for FAQ</h1>
     <p>
-      The following example demonstrates <a href="https://w3c.github.io/aria-practices/#disclosure">disclosure design pattern</a>
+      The following example demonstrates <a href="https://w3c.github.io/aria-practices/#disclosure"><abbr title="ARIA Authoring Practices">APG</abbr> disclosure design pattern</a>
       to create a set of frequently asked questions where the answers may be independently shown or hidden.
     </p>
-    <p>Alternatives:</p>
-    <ul class="alternatives">
-      <li>
-        <a href="disclosure-faq-inaccessible.html">Inaccessible FAQ</a>
-      </li>
-      <li>
-        <a href="disclosure-faq.html" aria-current="true">Accessible FAQ</a>
-      </li>
-    </ul>
+    <h2>Example Options</h2>
+    <section class="options">
+      <fieldest>
+        <legend>Keyboard Support for Parking FAQ disclosure buttons</legend>
+        <ul>
+          <li>
+            <label>
+              <input type="radio" name="faq-keyboard" value="nokeyboard" checked/>
+              No keyboard support, disclosure buttons only work with pointer clicks
+            </label>
+          </li>
+          <li>
+            <label>
+              <input type="radio" name="faq-keyboard" value="keyboard+none" />
+              Keyboard support, but with no focus styling (e.g. CSS <code>outline</code> property set to <code>none</code>)
+            </label>
+          </li>
+          <li>
+            <label>
+              <input type="radio" name="faq-keyboard" value="keyboard+default" />
+              Keyboard support, with browser default focus styling (browser default styles vary)
+            </label>
+          </li>
+          <li>
+            <label>
+              <input type="radio" name="faq-keyboard" value="keyboard+author" />
+              Keyboard support, with author focus styling
+            </label>
+          </li>
+        </ul>
+      </fieldset>
+    </section>
 
     <section>
       <div id="ex1">
-        <h2>Parking <abbr title="Frequently Asked Questions">FAQ</abbr>s</h2>
+        <h2>Example</h2>
         <dl class="faq">
           <dt>
             <button type="button" aria-expanded="false" aria-controls="faq1_desc" id="faq1_button">What do I do if I have a permit for an assigned lot, but can't find a space there?</button>
@@ -88,7 +112,8 @@
 
   </main>
   <footer>
-    Based on an example from the <a href="https://w3c.github.io/aria-practices">W3C ARIA Authoring Practices examples</a>.
+    <nav class="apg" aria-label="Related resources"><a href="https://w3c.github.io/aria-practices">W3C ARIA Authoring Practices</a> | <a href="https://accessibleit.disability.illinois.edu">DRES Accessible IT Group</a></nav>
+    <div class="copyright"><a href="https://illinois.edu"><img src="../../images/block-i.png" alt="University of Illinois"></a> Copyright © 2021 University of Illinois</div>
   </footer>
   <script>
       var SkipToConfig =  {

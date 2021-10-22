@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8" />
-<title>Disclosure Navigation Menu: Accessible | Web Accessibility Concepts</title>
+<title>Disclosure Navigation Menu | Web Accessibility Concepts</title>
 
   <!--  Core js and css shared by all examples; do not modify when using this template. -->
   <link rel="stylesheet" href="../css/core.css">
@@ -19,36 +19,57 @@
     <nav aria-label="Examples">
       <ul>
         <li><a href="..">All Examples</a> | </li>
-        <li><a href="disclosure-faq.html"  aria-current="true">FAQ</a> | </li>
-        <li><a href="disclosure-navigation.html">Navigation</a></li>
+        <li><a href="disclosure-faq.html">FAQ</a> | </li>
+        <li><a href="disclosure-navigation.html" aria-current="true">Navigation</a> | </li>
+        <li><a href="disclosure-navigation-top-level-links.html">Navigation Top Level Links</a></li>
       </ul>
     </nav>
   </header>
   <main>
-    <h1>Disclosure Navigation Menu: Accessible</h1>
+    <h1>Disclosure Navigation Menu</h1>
 
     <p>
       The following example demonstrates using the
-      <a href=""https://w3c.github.io/aria-practices#disclosure">disclosure design pattern</a>
+      <a href=""https://w3c.github.io/aria-practices#disclosure"><abbr title="ARIA Authoring Practices">APG</abbr> disclosure design pattern</a>
       to show and hide dropdown lists of links in a navigation bar for a mythical university web site.
-      Each disclosure button represents a section of the web site, and expanding it shows a list of links to pages within that section.
+       Each disclosure button opens and closes a menu of links.
     </p>
 
-    <p>Alternatives:</p>
-    <ul class="alternatives">
-      <li>
-        <a href="disclosure-navigation.html" aria-current="true">Accessible disclosure navigation menu</a>
-      </li>
-      <li>
-        <a href="disclosure-navigation-inaccessible.html">Inaccessible disclosure navigation menu</a>
-      </li>
-      <li>
-        <a href="disclosure-navigation-top-level-links.html">Accessible disclosure navigation menu with top level links</a>
-      </li>
-    </ul>
+    <h2>Example Options</h2>
+    <section class="options">
+      <fieldest>
+        <legend>Keyboard Support for Disclosure Navigation Menu</legend>
+        <ul>
+          <li>
+            <label>
+              <input type="radio" name="faq-keyboard" value="nokeyboard" checked/>
+              No keyboard support, disclosure buttons only work with pointer clicks
+            </label>
+          </li>
+          <li>
+            <label>
+              <input type="radio" name="faq-keyboard" value="keyboard+none" />
+              Keyboard support, but with no focus styling (e.g. CSS <code>outline</code> property set to <code>none</code>)
+            </label>
+          </li>
+          <li>
+            <label>
+              <input type="radio" name="faq-keyboard" value="keyboard+default" />
+              Keyboard support, with default browser focus styling (browser default styles vary)
+            </label>
+          </li>
+          <li>
+            <label>
+              <input type="radio" name="faq-keyboard" value="keyboard+author" />
+              Keyboard support, with author focus styling
+            </label>
+          </li>
+        </ul>
+      </fieldset>
+    </section>
 
     <section>
-      <h2>Navigational Links</h2>
+      <h2>Example</h2>
       <div id="ex1">
         <nav aria-label="Mythical University">
           <ul id="exTest" class="disclosure-nav">
@@ -134,7 +155,8 @@
   </main>
 
   <footer>
-    Based on examples found in the <a href="https://w3c.github.io/aria-practices">W3C ARIA Authoring Practices</a>.
+    <nav class="apg" aria-label="Related resources"><a href="https://w3c.github.io/aria-practices">W3C ARIA Authoring Practices</a> | <a href="https://accessibleit.disability.illinois.edu">DRES Accessible IT Group</a></nav>
+    <div class="copyright"><a href="https://illinois.edu"><img src="../../images/block-i.png" alt="University of Illinois"></a> Copyright © 2021 University of Illinois</div>
   </footer>
   <script>
       var SkipToConfig =  {

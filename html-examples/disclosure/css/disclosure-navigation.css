@@ -30,11 +30,7 @@
   top: 100%;
 }
 
-.disclosure-nav .button {
-}
-
-.disclosure-nav button,
-.disclosure-nav .button {
+.disclosure-nav button {
   font-family: helvetica, arial, sans-serif;
   margin: 0;
   padding: 4px 42px 4px 6px;
@@ -47,16 +43,9 @@
   position: relative;
 }
 
-.disclosure-nav button span,
-.disclosure-nav .button span {
+.disclosure-nav button span {
   position:  absolute;
   right: 4px;
-}
-
-.disclosure-nav button:focus span,
-.disclosure-nav button:hover span,
-.disclosure-nav .button:hover span {
-  right: 2px;
 }
 
 .disclosure-nav button span::after,
@@ -65,8 +54,7 @@
   color: currentColor;
 }
 
-.disclosure-nav button[aria-expanded="true"] span::after,
-.disclosure-nav .button.expanded span::after {
+.disclosure-nav button[aria-expanded="true"] span::after {
   content: '▲';
 }
 
@@ -88,20 +76,27 @@
   display: block;
 }
 
+.no-focus .disclosure-nav button:focus,
+.no-focus .disclosure-nav a:focus {
+  outline: none;
+}
 
-.disclosure-nav button:focus,
+.author-focus .disclosure-nav button:focus span,
+.disclosure-nav button:hover span {
+  right: 2px;
+}
+
+.author-focus .disclosure-nav button:focus,
+.author-focus .disclosure-nav ul a:focus,
 .disclosure-nav button:hover,
-.disclosure-nav .button:hover,
-.disclosure-nav ul a:hover,
-.disclosure-nav ul a:focus {
+.disclosure-nav ul a:hover {
   padding: 2px 4px;
   border: 2px solid white;
   border-radius: 5px;
   outline: none;
 }
 
-.disclosure-nav button:focus,
-.disclosure-nav .button:hover,
+.author-focus .disclosure-nav button:focus,
 .disclosure-nav button:hover {
   padding: 2px 40px 2px 4px;
 }

@@ -46,26 +46,11 @@
   text-decoration: none;
 }
 
-.disclosure-nav button span {
-  position:  absolute;
-  right: 4px;
+.disclosure-nav button[aria-expanded="true"] {
+  transform: rotate(180deg);
 }
 
-.disclosure-nav button:focus span,
-.disclosure-nav button:hover span {
-  right: 2px;
-}
-
-.disclosure-nav button span::after {
-  content: '▼';
-  color: currentColor;
-}
-
-.disclosure-nav button[aria-expanded="true"] span::after {
-  content: '▲';
-}
-
-.disclosure-nav a {
+.disclosure-nav ul a {
   margin: 0;
   padding: 4px 6px;
   border: 0;
@@ -84,11 +69,15 @@
   display: block;
 }
 
+.no-focus .disclosure-nav button:focus,
+.no-focus .disclosure-nav a:focus {
+  outline: none;
+}
 
-.disclosure-nav button:focus,
+.author-focus .disclosure-nav button:focus,
+.author-focus .disclosure-nav a:focus,
 .disclosure-nav button:hover,
-.disclosure-nav a:hover,
-.disclosure-nav a:focus {
+.disclosure-nav a:hover {
   padding: 2px 4px;
   border: 2px solid white;
   border-radius: 5px;

@@ -87,6 +87,18 @@ class DisclosureNav {
     }
   }
 
+  moveToFirstLink(node) {
+    let menuId = parseInt(node.getAttribute('data-menu-index'));
+    let linkNode = this.linkNodes[menuId][0]
+    linkNode.focus();
+  }
+
+  moveToLastLink(node) {
+    let menuId = parseInt(node.getAttribute('data-menu-index'));
+    let linkNode = this.linkNodes[menuId][this.linkNodes[menuId].length - 1]
+    linkNode.focus();
+  }
+
   moveToNextLink(node) {
     let menuId = parseInt(node.getAttribute('data-menu-index'));
     let linkId = parseInt(node.getAttribute('data-link-index'));
@@ -110,6 +122,41 @@ class DisclosureNav {
     }
   }
 
+  moveToFirstMenu(node) {
+    let menuNode = this.buttonNodes[0];
+    menuNode.focus();
+  }
+
+  moveToLastMenu(node) {
+    let menuNode = this.buttonNodes[this.buttonNodes.length - 1];
+    menuNode.focus();
+  }
+
+  moveToNextMenu(node) {
+    let menuId = parseInt(node.getAttribute('data-menu-index'));
+
+    let nextMenuNode = this.buttonNodes[menuId + 1];
+
+
+    if (!nextMenuNode) {
+      nextMenuNode = this.buttonNodes[this.buttonNodes.length - 1];
+    }
+    this.hideAll();
+    nextMenuNode.focus();
+  }
+
+  moveToPreviousMenu(node) {
+    let menuId = parseInt(node.getAttribute('data-menu-index'));
+
+    let nextMenuNode = this.buttonNodes[menuId - 1];
+
+    if (!nextMenuNode) {
+      nextMenuNode = this.buttonNodes[0];
+    }
+    this.hideAll();
+    nextMenuNode.focus();
+  }
+
   /* EVENT HANDLERS */
 
 
@@ -128,15 +175,66 @@ class DisclosureNav {
   onButtonKeydown(event) {
     let tgt = event.currentTarget;
     let key = event.key;
+    let flag = false;
+    let index = parseInt(tgt.getAttribute('data-menu-index'));
 
     switch (key) {
       case 'Escape':
-        let index = parseInt(tgt.getAttribute('data-menu-index'));
         this.hideMenu(index);
+        flag = true;
+        break;
+
+      case 'ArrowDown':
+        if (this.keyboardEnhancement) {
+          this.showMenu(index)
+          this.moveToFirstLink(tgt);
+        }
+        flag = true;
+        break;
+
+      case 'ArrowUp':
+        if (this.keyboardEnhancement) {
+          this.showMenu(index)
+          this.moveToLastLink(tgt);
+        }
+        flag = true;
+        break;
+
+      case 'ArrowRight':
+        if (this.keyboardEnhancement) {
+          this.moveToNextMenu(tgt);
+        }
+        flag = true;
+        break;
+
+      case 'ArrowLeft':
+        if (this.keyboardEnhancement) {
+          this.moveToPreviousMenu(tgt);
+        }
+        flag = true;
+        break;
+
+      case 'End':
+        if (this.keyboardEnhancement) {
+          this.moveToLastMenu(tgt);
+        }
+        flag = true;
+        break;
+
+      case 'Home':
+        if (this.keyboardEnhancement) {
+          this.moveToFirstMenu(tgt);
+        }
+        flag = true;
         break;
 
       default:
         break;
+    }
+
+    if (flag) {
+      event.stopPropagation();
+      event.preventDefault();
     }
   }
 
@@ -173,14 +271,44 @@ class DisclosureNav {
         break;
 
       case 'ArrowDown':
-      case 'Down':
-        this.moveToNextLink(tgt);
+        if (this.keyboardEnhancement) {
+          this.moveToNextLink(tgt);
+        }
         flag = true;
         break;
 
-      case 'Up':
       case 'ArrowUp':
-        this.moveToPreviousLink(tgt);
+        if (this.keyboardEnhancement) {
+          this.moveToPreviousLink(tgt);
+        }
+        flag = true;
+        break;
+
+      case 'ArrowRight':
+        if (this.keyboardEnhancement) {
+          this.moveToNextMenu(tgt);
+        }
+        flag = true;
+        break;
+
+      case 'ArrowLeft':
+        if (this.keyboardEnhancement) {
+          this.moveToPreviousMenu(tgt);
+        }
+        flag = true;
+        break;
+
+      case 'End':
+        if (this.keyboardEnhancement) {
+          this.moveToLastLink(tgt);
+        }
+        flag = true;
+        break;
+
+      case 'Home':
+        if (this.keyboardEnhancement) {
+          this.moveToFirstLink(tgt);
+        }
         flag = true;
         break;
 
@@ -250,6 +378,7 @@ class optionsNav {
     this.exampleNode.classList.remove('no-focus');
     this.exampleNode.classList.remove('default-focus');
     this.exampleNode.classList.remove('author-focus');
+    this.exampleNode.classList.remove('author-hc-focus');
 
     switch(inputNode.value) {
       case 'nokeyboard':
@@ -268,6 +397,10 @@ class optionsNav {
 
       case 'keyboard+author':
         this.exampleNode.classList.add('author-focus');
+        break;
+
+      case 'keyboard+author+hc':
+        this.exampleNode.classList.add('author-hc-focus');
         break;
 
       default:

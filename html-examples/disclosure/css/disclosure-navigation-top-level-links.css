@@ -25,7 +25,7 @@
   border: 2px solid #13294b;
   display: block;
   list-style-type: none;
-  min-width: 7em;
+  min-width: 8em;
   position: absolute;
   top: 100%;
 }
@@ -46,6 +46,12 @@
   text-decoration: none;
 }
 
+.author-focus .disclosure-nav > li > a,
+.author-focus .disclosure-nav button {
+  padding: 2px 4px;
+  border: 2px solid transparent;
+}
+
 .disclosure-nav button[aria-expanded="true"] {
   transform: rotate(180deg);
 }
@@ -53,12 +59,12 @@
 .disclosure-nav ul a {
   margin: 0;
   padding: 4px 6px;
-  border: 0;
+  border: none;
   color: white;
-  display: block;
+  display: inline-block;
   text-decoration: underline;
   white-space: nowrap;
-  display: inline-block;
+  width: 90%;
 }
 
 .disclosure-nav > li ul {
@@ -74,8 +80,8 @@
   outline: none;
 }
 
-.author-focus .disclosure-nav button:focus,
-.author-focus .disclosure-nav a:focus,
+.author-hc-focus .disclosure-nav button:focus,
+.author-hc-focus .disclosure-nav a:focus,
 .disclosure-nav button:hover,
 .disclosure-nav a:hover {
   padding: 2px 4px;
@@ -84,6 +90,12 @@
   outline: none;
 }
 
+.author-focus .disclosure-nav button:focus,
+.author-focus .disclosure-nav a:focus {
+  border-color: white;
+  border-radius: 5px;
+  outline: none;
+}
 
 .disclosure-page-content {
   padding: 0.5em;

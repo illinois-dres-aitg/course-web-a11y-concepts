@@ -35,6 +35,70 @@
 
     </p>
 
+    <h2>Keyboard Support</h2>
+    <table class="keyboard" aria-label="Keyboard Support">
+      <thead>
+        <tr>
+          <th>Key</th>
+          <th>Optional</th>
+          <th style="width: 20em">Funtion</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><kbd>Tab</kbd></td>
+          <td></td>
+          <td>Move to next disclosure button, top-level link or menu link.</td>
+        </tr>
+        <tr>
+          <td><kbd>Shift+Tab</kbd></td>
+          <td></td>
+          <td>Move to previous disclosure button, top-level link or menu link.</td>
+        </tr>
+        <tr>
+          <td><kbd>Space</kbd> and <br/><kbd>Enter</kbd></td>
+          <td></td>
+          <td>Open or close a menu.</td>
+        </tr>
+        <tr>
+          <td><kbd>Esc</kbd></td>
+          <td></td>
+          <td>Closes an open menu.</td>
+        </tr>
+        <tr>
+          <td><kbd>Up Arrow</kbd></td>
+          <td>Yes</td>
+          <td>Opens menu or moves to previous link in an open menu.</td>
+        </tr>
+        <tr>
+          <td><kbd>Down Arrow</kbd></td>
+          <td>Yes</td>
+          <td>Opens menu or moves to next link in an open menu.</td>
+        </tr>
+        <tr>
+          <td><kbd>Left Arrow</kbd></td>
+          <td>Yes</td>
+          <td>Moves to previous top level item, closes menu if open.</td>
+        </tr>
+        <tr>
+          <td><kbd>Right Arrow</kbd></td>
+          <td>Yes</td>
+          <td>Moves to next top level item, closes menu if open.</td>
+        </tr>
+        <tr>
+          <td><kbd>Home</kbd></td>
+          <td>Yes</td>
+          <td>Moves to first top level item or first link in an open menu.</td>
+        </tr>
+        <tr>
+          <td><kbd>End</kbd></td>
+          <td>Yes</td>
+          <td>Moves to last top level item or last link in an open menu.</td>
+        </tr>
+      </tbody>
+    </table>
+
+
     <h2>Example Options</h2>
     <section class="options">
       <fieldest>
@@ -42,7 +106,7 @@
         <ul>
           <li>
             <label>
-              <input type="radio" name="faq-keyboard" value="nokeyboard" checked/>
+              <input type="radio" name="faq-keyboard" value="nokeyboard" />
               No keyboard support, disclosure buttons only work with pointer clicks
             </label>
           </li>
@@ -64,7 +128,19 @@
               Keyboard support, with author focus styling
             </label>
           </li>
+          <li>
+            <label>
+              <input type="radio" name="faq-keyboard" value="keyboard+author+hc" checked/>
+              Keyboard support, with author focus styling that supports operating system high contrast settings
+            </label>
+          </li>
         </ul>
+        <div class="option">
+          <label>
+            <input type="checkbox" name="keyboard-enhancement"/>
+            Include keyboard enhancements for using the cursor keys (e.g. <kbd>Up Arrow</kbd>, <kbd>Down Arrow</kbd>, <kbd>Left Arrow</kbd>, <kbd>Right Arrow</kbd>, <kbd>Home</kbd> and <kbd>End</kbd> keys) in addition to the tab key to navigate the menu of links.
+          </label>
+        </div>
       </fieldset>
     </section>
     <section>

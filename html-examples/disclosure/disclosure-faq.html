@@ -30,6 +30,35 @@
       The following example demonstrates <a href="https://w3c.github.io/aria-practices/#disclosure"><abbr title="ARIA Authoring Practices">APG</abbr> disclosure design pattern</a>
       to create a set of frequently asked questions where the answers may be independently shown or hidden.
     </p>
+
+    <h2>Keyboard Support</h2>
+    <table class="keyboard" aria-label="Keyboard Support">
+      <thead>
+        <tr>
+          <th>Key</th>
+          <th>Optional</th>
+          <th style="width: 20em">Funtion</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><kbd>Tab</kbd></td>
+          <td></td>
+          <td>Move to next disclosure button.</td>
+        </tr>
+        <tr>
+          <td><kbd>Shift+Tab</kbd></td>
+          <td></td>
+          <td>Move to previous disclosure button.</td>
+        </tr>
+        <tr>
+          <td><kbd>Space</kbd> and <br/><kbd>Enter</kbd></td>
+          <td></td>
+          <td>Open or close an FAQ discription.</td>
+        </tr>
+      </tbody>
+    </table>
+
     <h2>Example Options</h2>
     <section class="options">
       <fieldest>
@@ -57,6 +86,12 @@
             <label>
               <input type="radio" name="faq-keyboard" value="keyboard+author" />
               Keyboard support, with author focus styling
+            </label>
+          </li>
+          <li>
+            <label>
+              <input type="radio" name="faq-keyboard" value="keyboard+author+hc" />
+              Keyboard support, with author focus styling that supports operating system high contrast settings
             </label>
           </li>
         </ul>

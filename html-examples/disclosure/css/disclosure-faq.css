@@ -13,6 +13,16 @@ dl.faq button {
   border-radius: 5px;
 }
 
+.author-focus dl.faq button {
+  padding: 2px 6px;
+  border: 2px solid transparent;
+}
+
+.author-hc-focus dl.faq button {
+  border: none;
+}
+
+
 dl dd {
   margin: 0;
   padding: 0;
@@ -32,14 +42,23 @@ dl.faq .desc {
   outline: none;
 }
 
-.author-focus dl.faq button:focus,
-dl.faq button:hover {
-  padding: 2px 6px;
+.author-hc-focus dl.faq button:focus,
+.author-hc-focus dl.faq button:hover {
   background-color: #def;
+  padding: 2px 6px;
   border: 2px solid #13294b;
   cursor: pointer;
   outline: none;
 }
+
+.author-focus dl.faq button:focus,
+dl.faq button:hover {
+  background-color: #def;
+  border-color: #13294b;
+  cursor: pointer;
+  outline: none;
+}
+
 
 dl.faq button[aria-expanded="false"]::before {
   content: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' style='forced-color-adjust: auto;'%3E%3Cpolygon points='1 1, 1 11, 8 6' fill='currentColor' stroke= 'currentColor' /%3E%3C/svg%3E%0A");

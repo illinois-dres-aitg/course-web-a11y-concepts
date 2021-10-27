@@ -35,6 +35,69 @@
        Each disclosure button opens and closes a menu of links.
     </p>
 
+    <h2>Keyboard Support</h2>
+    <table class="keyboard" aria-label="Keyboard Support">
+      <thead>
+        <tr>
+          <th>Key</th>
+          <th>Optional</th>
+          <th style="width: 20em">Funtion</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><kbd>Tab</kbd></td>
+          <td></td>
+          <td>Move to next disclosure button or menu link.</td>
+        </tr>
+        <tr>
+          <td><kbd>Shift+Tab</kbd></td>
+          <td></td>
+          <td>Move to previous disclosure button or menu link.</td>
+        </tr>
+        <tr>
+          <td><kbd>Space</kbd> and <br/><kbd>Enter</kbd></td>
+          <td></td>
+          <td>Open or close a menu.</td>
+        </tr>
+        <tr>
+          <td><kbd>Esc</kbd></td>
+          <td></td>
+          <td>Closes an open menu.</td>
+        </tr>
+        <tr>
+          <td><kbd>Up Arrow</kbd></td>
+          <td>Yes</td>
+          <td>Opens menu or moves to previous link in an open menu.</td>
+        </tr>
+        <tr>
+          <td><kbd>Down Arrow</kbd></td>
+          <td>Yes</td>
+          <td>Opens menu or moves to next link in an open menu.</td>
+        </tr>
+        <tr>
+          <td><kbd>Left Arrow</kbd></td>
+          <td>Yes</td>
+          <td>Moves to previous disclosure button, closes menu if open.</td>
+        </tr>
+        <tr>
+          <td><kbd>Right Arrow</kbd></td>
+          <td>Yes</td>
+          <td>Moves to next disclosure button, closes menu if open.</td>
+        </tr>
+        <tr>
+          <td><kbd>Home</kbd></td>
+          <td>Yes</td>
+          <td>Moves to first disclosure button or first link in an open menu.</td>
+        </tr>
+        <tr>
+          <td><kbd>End</kbd></td>
+          <td>Yes</td>
+          <td>Moves to last disclosure button or last link in an open menu.</td>
+        </tr>
+      </tbody>
+    </table>
+
     <h2>Example Options</h2>
     <section class="options">
       <fieldest>
@@ -42,7 +105,7 @@
         <ul>
           <li>
             <label>
-              <input type="radio" name="faq-keyboard" value="nokeyboard" checked/>
+              <input type="radio" name="faq-keyboard" value="nokeyboard" />
               No keyboard support, disclosure buttons only work with pointer clicks
             </label>
           </li>
@@ -62,6 +125,11 @@
             <label>
               <input type="radio" name="faq-keyboard" value="keyboard+author" />
               Keyboard support, with author focus styling
+            </label>
+          </li>
+            <label>
+              <input type="radio" name="faq-keyboard" value="keyboard+author+hc" checked/>
+              Keyboard support, with author focus styling that supports operating system high contrast settings
             </label>
           </li>
         </ul>

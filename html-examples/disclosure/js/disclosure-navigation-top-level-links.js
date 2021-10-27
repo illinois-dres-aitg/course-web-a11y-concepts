@@ -13,13 +13,16 @@ class DisclosureNav {
     this.rootNode = rootNode;
 
     this.buttonNodes = rootNode.querySelectorAll('button[aria-expanded]');
-    this.topLevelLinkNodes = [];
+    this.topLevelNodes = [];
     this.controlledNodes = [];
     this.linkNodes = [];
+
+    this.keyboardEnhancement = false;
 
     document.body.addEventListener('focusin', this.onBody.bind(this));
     document.body.addEventListener('pointerdown', this.onBody.bind(this));
 
+    let topLevelIndex = 0;
     for (let i = 0; i < this.buttonNodes.length; i += 1) {
       this.controlledNodes[i] = false;
       this.linkNodes[i] = [];
@@ -39,23 +42,36 @@ class DisclosureNav {
       buttonNode.addEventListener('focus',   this.onButtonFocus.bind(this));
 
       let linkNode = buttonNode.previousElementSibling;
-      this.topLevelLinkNodes.push(linkNode);
+      this.topLevelNodes.push(linkNode);
+      this.topLevelNodes.push(buttonNode);
 
       if (linkNode) {
-        linkNode.setAttribute('data-menu-index', i);
+        linkNode.setAttribute('data-top-level-index', topLevelIndex);
+        topLevelIndex += 1;
         linkNode.addEventListener('click', this.onLinkClick.bind(this));
+        linkNode.addEventListener('keydown', this.onTopLevelLinkKeydown.bind(this));
         linkNode.addEventListener('focus', this.onButtonFocus.bind(this));
       }
+
+      buttonNode.setAttribute('data-top-level-index', topLevelIndex);
 
       this.linkNodes[i] = buttonNode.nextElementSibling.querySelectorAll('a[href]');
 
       for (let j = 0; j < this.linkNodes[i].length; j += 1) {
         linkNode = this.linkNodes[i][j];
+        linkNode.setAttribute('data-top-level-index', topLevelIndex);
         linkNode.setAttribute('data-menu-index', i);
+        linkNode.setAttribute('data-link-index', j);
         linkNode.addEventListener('click', this.onLinkClick.bind(this));
         linkNode.addEventListener('keydown', this.onLinkKeydown.bind(this));
       }
+
+      topLevelIndex += 1;
     }
+  }
+
+  setKeyboardEnhancement(option) {
+    this.keyboardEnhancement = option;
   }
 
   showMenu(index) {
@@ -91,8 +107,76 @@ class DisclosureNav {
     }
   }
 
-  /* EVENT HANDLERS */
+  moveToFirstLink(node) {
+    let menuId = parseInt(node.getAttribute('data-menu-index'));
+    let linkNode = this.linkNodes[menuId][0]
+    linkNode.focus();
+  }
 
+  moveToLastLink(node) {
+    let menuId = parseInt(node.getAttribute('data-menu-index'));
+    let linkNode = this.linkNodes[menuId][this.linkNodes[menuId].length - 1]
+    linkNode.focus();
+  }
+
+  moveToNextLink(node) {
+    let menuId = parseInt(node.getAttribute('data-menu-index'));
+    let linkId = parseInt(node.getAttribute('data-link-index'));
+
+    let nextLinkNode = this.linkNodes[menuId][linkId + 1];
+
+    if (!nextLinkNode) {
+      nextLinkNode = this.linkNodes[menuId][0];
+    }
+    nextLinkNode.focus();
+  }
+
+  moveToPreviousLink(node) {
+    let menuId = parseInt(node.getAttribute('data-menu-index'));
+    let linkId = parseInt(node.getAttribute('data-link-index'));
+
+    if (linkId > 0) {
+      this.linkNodes[menuId][linkId - 1].focus();
+    } else {
+      this.linkNodes[menuId][this.linkNodes[menuId].length - 1].focus();
+    }
+  }
+
+  moveToFirstTopLevelItem(node) {
+    let topLevelNode = this.topLevelNodes[0];
+    topLevelNode.focus();
+  }
+
+  moveToLastTopLevelItem(node) {
+    let topLevelNode = this.topLevelNodes[this.topLevelNodes.length - 1];
+    topLevelNode.focus();
+  }
+
+  moveToNextTopLevelItem(node) {
+    let topLevelId = parseInt(node.getAttribute('data-top-level-index'));
+
+    let topLevelNode = this.topLevelNodes[topLevelId + 1];
+
+    if (!topLevelNode) {
+      topLevelNode = this.topLevelNodes[this.topLevelNodes.length - 1];
+    }
+    this.hideAll();
+    topLevelNode.focus();
+  }
+
+  moveToPreviousTopLevelItem(node) {
+    let topLevelId = parseInt(node.getAttribute('data-top-level-index'));
+
+    let topLevelNode = this.topLevelNodes[topLevelId - 1];
+
+    if (!topLevelNode) {
+      topLevelNode = this.topLevelNodes[0];
+    }
+    this.hideAll();
+    topLevelNode.focus();
+  }
+
+  /* EVENT HANDLERS */
 
   onBody(event) {
     let tgt = event.target;
@@ -109,15 +193,111 @@ class DisclosureNav {
   onButtonKeydown(event) {
     let tgt = event.currentTarget;
     let key = event.key;
+    let flag = false;
+    let index = parseInt(tgt.getAttribute('data-menu-index'));
 
     switch (key) {
       case 'Escape':
-        let index = parseInt(tgt.getAttribute('data-menu-index'));
         this.hideMenu(index);
+        flag = true;
+        break;
+
+      case 'ArrowDown':
+        if (this.keyboardEnhancement) {
+          this.showMenu(index)
+          this.moveToFirstLink(tgt);
+        }
+        flag = true;
+        break;
+
+      case 'ArrowUp':
+        if (this.keyboardEnhancement) {
+          this.showMenu(index)
+          this.moveToLastLink(tgt);
+        }
+        flag = true;
+        break;
+
+      case 'ArrowRight':
+        if (this.keyboardEnhancement) {
+          this.moveToNextTopLevelItem(tgt);
+        }
+        flag = true;
+        break;
+
+      case 'ArrowLeft':
+        if (this.keyboardEnhancement) {
+          this.moveToPreviousTopLevelItem(tgt);
+        }
+        flag = true;
+        break;
+
+      case 'End':
+        if (this.keyboardEnhancement) {
+          this.moveToLastTopLevelItem(tgt);
+        }
+        flag = true;
+        break;
+
+      case 'Home':
+        if (this.keyboardEnhancement) {
+          this.moveToFirstTopLevelItem(tgt);
+        }
+        flag = true;
         break;
 
       default:
         break;
+    }
+
+    if (flag) {
+      event.stopPropagation();
+      event.preventDefault();
+    }
+  }
+
+  onTopLevelLinkKeydown(event) {
+    let tgt = event.currentTarget;
+    let key = event.key;
+    let flag = false;
+
+    switch (key) {
+
+      case 'ArrowRight':
+        if (this.keyboardEnhancement) {
+          this.moveToNextTopLevelItem(tgt);
+        }
+        flag = true;
+        break;
+
+      case 'ArrowLeft':
+        if (this.keyboardEnhancement) {
+          this.moveToPreviousTopLevelItem(tgt);
+        }
+        flag = true;
+        break;
+
+      case 'End':
+        if (this.keyboardEnhancement) {
+          this.moveToLastTopLevelItem(tgt);
+        }
+        flag = true;
+        break;
+
+      case 'Home':
+        if (this.keyboardEnhancement) {
+          this.moveToFirstTopLevelItem(tgt);
+        }
+        flag = true;
+        break;
+
+      default:
+        break;
+    }
+
+    if (flag) {
+      event.stopPropagation();
+      event.preventDefault();
     }
   }
 
@@ -143,16 +323,65 @@ class DisclosureNav {
   onLinkKeydown(event) {
     let tgt = event.currentTarget;
     let key = event.key;
+    let flag = false;
 
     switch (key) {
       case 'Escape':
         let index = parseInt(tgt.getAttribute('data-menu-index'));
         this.hideMenu(index);
         this.buttonNodes[index].focus();
+        flag = true;
+        break;
+
+      case 'ArrowDown':
+        if (this.keyboardEnhancement) {
+          this.moveToNextLink(tgt);
+        }
+        flag = true;
+        break;
+
+      case 'ArrowUp':
+        if (this.keyboardEnhancement) {
+          this.moveToPreviousLink(tgt);
+        }
+        flag = true;
+        break;
+
+      case 'ArrowRight':
+        if (this.keyboardEnhancement) {
+          this.moveToNextTopLevelItem(tgt);
+        }
+        flag = true;
+        break;
+
+      case 'ArrowLeft':
+        if (this.keyboardEnhancement) {
+          this.moveToPreviousTopLevelItem(tgt);
+        }
+        flag = true;
+        break;
+
+      case 'End':
+        if (this.keyboardEnhancement) {
+          this.moveToLastLink(tgt);
+        }
+        flag = true;
+        break;
+
+      case 'Home':
+        if (this.keyboardEnhancement) {
+          this.moveToFirstLink(tgt);
+        }
+        flag = true;
         break;
 
       default:
         break;
+    }
+
+    if (flag) {
+      event.stopPropagation();
+      event.preventDefault();
     }
   }
 }
@@ -175,6 +404,15 @@ class optionsNav {
       if (radioNode.checked) {
         this.setKeyboardOption(radioNode);
       }
+    }
+
+    let enhancementNode = optionNode.querySelector('input[name="keyboard-enhancement"]');
+
+    if (enhancementNode) {
+      this.setKeyboardEnhancement(enhancementNode);
+      enhancementNode.addEventListener('click', this.onEnhancementClick.bind(this));
+      enhancementNode.addEventListener('focus', this.onFocus.bind(this));
+      enhancementNode.addEventListener('blur', this.onBlur.bind(this));
     }
   }
 
@@ -203,6 +441,7 @@ class optionsNav {
     this.exampleNode.classList.remove('no-focus');
     this.exampleNode.classList.remove('default-focus');
     this.exampleNode.classList.remove('author-focus');
+    this.exampleNode.classList.remove('author-hc-focus');
 
     switch(inputNode.value) {
       case 'nokeyboard':
@@ -223,9 +462,30 @@ class optionsNav {
         this.exampleNode.classList.add('author-focus');
         break;
 
+      case 'keyboard+author+hc':
+        this.exampleNode.classList.add('author-hc-focus');
+        break;
+
       default:
         break;
     }
+  }
+
+  setKeyboardEnhancement(node) {
+    if (node.checked) {
+      node.parentNode.classList.add('checked');
+    } else {
+      node.parentNode.classList.remove('checked');
+    }
+
+    for (let i = 0; i < this.disclosureNavs.length; i += 1) {
+      this.disclosureNavs[i].setKeyboardEnhancement(node.checked);
+    }
+  }
+
+  onEnhancementClick(event) {
+    let tgt = event.currentTarget;
+    this.setKeyboardEnhancement(tgt);
   }
 
   onClick(event) {

@@ -102,6 +102,7 @@ class optionsFAQ {
     this.exampleNode.classList.remove('no-focus');
     this.exampleNode.classList.remove('default-focus');
     this.exampleNode.classList.remove('author-focus');
+    this.exampleNode.classList.remove('author-hc-focus');
 
     switch(inputNode.value) {
       case 'nokeyboard':
@@ -120,6 +121,10 @@ class optionsFAQ {
 
       case 'keyboard+author':
         this.exampleNode.classList.add('author-focus');
+        break;
+
+      case 'keyboard+author+hc':
+        this.exampleNode.classList.add('author-hc-focus');
         break;
 
       default:

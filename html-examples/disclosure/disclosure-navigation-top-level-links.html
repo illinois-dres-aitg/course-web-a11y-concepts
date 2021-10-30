@@ -19,6 +19,7 @@
     <nav aria-label="Examples">
       <ul>
         <li><a href="..">All Examples</a> | </li>
+        <li><a href="../html/links-and-form-controls.html">Links and Controls</a> | </li>
         <li><a href="disclosure-faq.html">FAQ</a> | </li>
         <li><a href="disclosure-navigation.html">Navigation</a> | </li>
         <li><a href="disclosure-navigation-top-level-links.html"   aria-current="true">Navigation Top Level Links</a></li>
@@ -41,7 +42,7 @@
         <tr>
           <th>Key</th>
           <th>Optional</th>
-          <th style="width: 20em">Funtion</th>
+          <th style="width: 20em">Function</th>
         </tr>
       </thead>
       <tbody>
@@ -102,7 +103,7 @@
     <h2>Example Options</h2>
     <section class="options">
       <fieldest>
-        <legend>Keyboard Support for Disclosure Navigation Menu</legend>
+        <legend>Keyboard Support  and Focus Styling Options for Disclosure Navigation Menu</legend>
         <ul>
           <li>
             <label>
@@ -144,89 +145,89 @@
       </fieldset>
     </section>
     <section>
-      <h2>Example</h2>
-      <div id="ex1">
-        <nav aria-label="Mythical University">
-          <ul id="exTest" class="disclosure-nav">
-            <li>
-              <a href="#mythical-About">About</a>
-              <button type="button" aria-expanded="true" aria-controls="id_about_menu" aria-label="About">▼</button>
-              <ul id="id_about_menu">
-                <li>
-                  <a href="#mythical-Overview">Overview</a>
-                </li>
-                <li>
-                  <a href="#mythical-Administration">Administration</a>
-                </li>
-                <li>
-                  <a href="#mythical-Facts">Facts</a>
-                </li>
-                <li>
-                  <a href="#mythical-Campus-Tours">Campus Tours</a>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <a href="#mythical-Admissions">Admissions</a>
-              <button type="button" aria-expanded="true" aria-controls="id_admissions_menu">▼</button>
-              <ul id="id_admissions_menu">
-                <li>
-                  <a href="#mythical-Apply">Apply</a>
-                </li>
-                <li>
-                  <a href="#mythical-Tuition">Tuition</a>
-                </li>
-                <li>
-                  <a href="#mythical-Sign-Up">Sign Up</a>
-                </li>
-                <li>
-                  <a href="#mythical-Visit">Visit</a>
-                </li>
-                <li>
-                  <a href="#mythical-Photo-Tour">Photo Tour</a>
-                </li>
-                <li>
-                  <a href="#mythical-Connect">Connect</a>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <a href="#mythical-Academics">Academics</a>
-              <button type="button" aria-expanded="true" aria-controls="id_academics_menu">▼</button>
-              <ul id="id_academics_menu">
-                <li>
-                  <a href="#mythical-Colleges">Colleges &amp; Schools</a>
-                </li>
-                <li>
-                  <a href="#mythical-Programs-of-Study">Programs of Study</a>
-                </li>
-                <li>
-                  <a href="#mythical-Honors">Honors Programs</a>
-                </li>
-                <li>
-                  <a href="#mythical-Online-Courses">Online Courses</a>
-                </li>
-                <li>
-                  <a href="#mythical-Course-Explorer">Course Explorer</a>
-                </li>
-                <li>
-                  <a href="#mythical-Register-for-Class">Register for Class</a>
-                </li>
-                <li>
-                  <a href="#mythical-Academic-Calendar">Academic Calendar</a>
-                </li>
-                <li>
-                  <a href="#mythical-Transcripts">Transcripts</a>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </nav>
-        <div id="mythical-page-content" class="disclosure-page-content" tabindex="-1" role="region" aria-label="Mythical University sample page content">
-          <h3 id="mythical-page-heading">Mythical University</h3>
-          <p>Sample content section. Activating a link above will update and navigate to this region.</p>
-        </div>
+    <h2>Example</h2>
+    <div id="ex1">
+      <nav aria-label="Mythical University">
+        <ul id="exTest" class="disclosure-nav">
+          <li>
+            <a href="#mythical-About">About</a>
+            <button type="button" aria-expanded="true" aria-controls="id_about_menu" aria-label="About">▼</button>
+            <ul id="id_about_menu">
+              <li>
+                <a href="#mythical-Overview">Overview</a>
+              </li>
+              <li>
+                <a href="#mythical-Administration">Administration</a>
+              </li>
+              <li>
+                <a href="#mythical-Facts">Facts</a>
+              </li>
+              <li>
+                <a href="#mythical-Campus-Tours">Campus Tours</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="#mythical-Admissions">Admissions</a>
+            <button type="button" aria-expanded="true" aria-controls="id_admissions_menu">▼</button>
+            <ul id="id_admissions_menu">
+              <li>
+                <a href="#mythical-Apply">Apply</a>
+              </li>
+              <li>
+                <a href="#mythical-Tuition">Tuition</a>
+              </li>
+              <li>
+                <a href="#mythical-Sign-Up">Sign Up</a>
+              </li>
+              <li>
+                <a href="#mythical-Visit">Visit</a>
+              </li>
+              <li>
+                <a href="#mythical-Photo-Tour">Photo Tour</a>
+              </li>
+              <li>
+                <a href="#mythical-Connect">Connect</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="#mythical-Academics">Academics</a>
+            <button type="button" aria-expanded="true" aria-controls="id_academics_menu">▼</button>
+            <ul id="id_academics_menu">
+              <li>
+                <a href="#mythical-Colleges">Colleges &amp; Schools</a>
+              </li>
+              <li>
+                <a href="#mythical-Programs-of-Study">Programs of Study</a>
+              </li>
+              <li>
+                <a href="#mythical-Honors">Honors Programs</a>
+              </li>
+              <li>
+                <a href="#mythical-Online-Courses">Online Courses</a>
+              </li>
+              <li>
+                <a href="#mythical-Course-Explorer">Course Explorer</a>
+              </li>
+              <li>
+                <a href="#mythical-Register-for-Class">Register for Class</a>
+              </li>
+              <li>
+                <a href="#mythical-Academic-Calendar">Academic Calendar</a>
+              </li>
+              <li>
+                <a href="#mythical-Transcripts">Transcripts</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <div id="mythical-page-content" class="disclosure-page-content" tabindex="-1" role="region" aria-label="Mythical University sample page content">
+        <h3 id="mythical-page-heading">Mythical University</h3>
+        <p>Sample content section. Activating a link above will update and navigate to this region.</p>
       </div>
+    </div>
 
     </section>
 

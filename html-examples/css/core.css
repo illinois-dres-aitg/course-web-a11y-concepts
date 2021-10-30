@@ -111,19 +111,21 @@ main section.options {
 }
 
 main a {
-  padding: 2px;
+  padding: 4px;
   color: #13294b;
   display: inline-block;
 }
 
+
 main a:focus,
 main a:hover {
-  padding: 0;
+  padding: 2px;
   border: 2px solid #13294b;
   border-radius: 5px;
+  background-color: #def;
 }
 
-main label {
+main label:not([for]) {
   margin: 1px;
   padding: 4px 6px;
   display: inline-block;
@@ -134,8 +136,8 @@ main label.checked {
   background-color: white;
 }
 
-main label.focus,
-main label:hover {
+main label:not([for]).focus,
+main label:not([for]):hover {
   padding: 2px 4px;
   border: 2px solid #13294b;
   border-radius: 5px;
@@ -182,7 +184,7 @@ table.keyboard td {
   background-color: #def;
   padding: 0.5em;
   vertical-align: baseline;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #8ccbf2;
 }
 
 table.keyboard th {
@@ -196,12 +198,32 @@ table.keyboard th {
 table.keyboard tbody tr td:nth-child(2) {
   padding-left: 2em;
 }
+
+details.keyboard summary {
+  margin: 2px;
+  padding: 4px;
+  color: #13294b;
+  white-space: nowrap;
+  max-width: 20em;
+}
+
+
+details.keyboard summary:focus,
+details.keyboard summary:hover {
+  padding: 2px;
+  border: 2px solid #13294b;
+  border-radius: 5px;
+  background-color: #def;
+}
+
+
 /* Style all kbd elements that are not in table headers */
 
 table.data.attributes tbody th,
 table.data.attributes tbody td {
   border: 1px solid silver;
 }
+
 
 /* Options styling */
 

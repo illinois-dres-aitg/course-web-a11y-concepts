@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Keyboard Operation of Links and Form Controls | Web Accessibility Concepts</title>
+
+  <!--  Core js and css shared by all examples; do not modify when using this template. -->
+  <link rel="stylesheet" href="../css/core.css">
+  <script src="https://paypal.github.io/skipto/downloads/js/skipto.min.js"></script>
+
+  <!--  js and css for the disclosure example. -->
+  <link href="css/links-and-form-controls.css" rel="stylesheet">
+  <script src="js/links-and-form-controls.js"></script>
+
+</head>
+<body>
+  <header>
+    <div class="website">Web Accessibility Concepts</div>
+    <nav aria-label="Examples">
+      <ul class="related">
+        <li><a href="..">All Examples</a> | </li>
+        <li><a href="../html/links-and-form-controls.html"  aria-current="true">Links and Controls</a> | </li>
+        <li><a href="../disclosure/disclosure-faq.html">FAQ</a> | </li>
+        <li><a href="../disclosure/disclosure-navigation.html">Navigation</a> | </li>
+        <li><a href="../disclosure/disclosure-navigation-top-level-links.html">Navigation Top Level Links</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <h1>Keyboard Operation of Links and Form Controls</h1>
+
+    <p>Demonstrates keyboard support built-in to browsers for the navigation and operation of standard HTML links and form controls and the experience .</p>
+
+
+    <h2>Keyboard Support</h2>
+    <table class="keyboard" aria-label="Keyboard Support">
+      <thead>
+        <tr>
+          <th>Key</th>
+          <th style="width: 20em">Function</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><kbd>Tab</kbd></td>
+          <td>Move to next link or form control.</td>
+        </tr>
+        <tr>
+          <td><kbd>Shift+Tab</kbd></td>
+          <td>Move to previous link or form control.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Example Options</h2>
+    <section class="options">
+      <fieldest>
+        <legend>Keyboard Focus Styling Options</legend>
+        <ul>
+          <li>
+            <label>
+              <input type="radio" name="faq-keyboard" value="keyboard+none" />
+              Keyboard support, but with no focus styling (e.g. CSS <code>outline</code> property set to <code>none</code>)
+            </label>
+          </li>
+          <li>
+            <label>
+              <input type="radio" name="faq-keyboard" value="keyboard+default" checked/>
+              Keyboard support, with default browser focus styling (browser default styles vary)
+            </label>
+          </li>
+          <li>
+            <label>
+              <input type="radio" name="faq-keyboard" value="keyboard+author" />
+              Keyboard support, with author focus styling
+            </label>
+          </li>
+          <li>
+            <label>
+              <input type="radio" name="faq-keyboard" value="keyboard+author+hc" />
+              Keyboard support, with author focus styling that supports operating system high contrast settings
+            </label>
+          </li>
+        </ul>
+      </fieldset>
+    </section>
+    <section>
+    <h2>Example</h2>
+    <div id="ex1">
+
+      <!-- Links -->
+
+      <h3>Links</h3>
+      <details class="keyboard">
+        <summary id="id-kbd-links">Keyboard Support for activating links</summary>
+        <table class="keyboard" aria-labelledby="id-kbd-links">
+          <thead>
+            <tr>
+              <th>Key</th>
+              <th style="width: 20em">Function</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><kbd>Enter</kbd></td>
+              <td>Activate link.</td>
+            </tr>
+          </tbody>
+        </table>
+      </details>
+      <div class="links">
+        <ul>
+          <li><a href="#1">Some place 1</a></li>
+          <li><a href="#2">Some place 2</a></li>
+          <li><a href="#3">Some place 3</a></li>
+        </ul>
+      </div>
+
+      <!-- Links with Click Events -->
+
+      <h3>Links with Click Events</h3>
+      <p>No keyboard support, and since these links do not have an <code>href</code> attribute, they are not part of the tab order of the page.</p>
+      <script>
+        function linkClick(link) {
+          window.location.href = link;
+        }
+      </script>
+      <div class="links">
+        <ul>
+          <li><a onclick="linkClick('#1click')">Some place 1 using click event</a></li>
+          <li><a onclick="linkClick('#2click')">Some place 2 using click event</a></li>
+          <li><a onclick="linkClick('#3click')">Some place 3 using click event</a></li>
+        </ul>
+      </div>
+
+      <!-- Buttons -->
+
+      <h3>Buttons</h3>
+      <div class="control"><button>Action 1</button></div>
+      <div class="control"><input type="button" value="Action 2"/></div>
+      <div class="control"><input type="submit"/></div>
+      <div class="control"><input type="reset"/></div>
+
+      <!-- Checkbox -->
+
+      <h3>Checkbox</h3>
+      <div class="other"><label><input type="checkbox"/>Enable a notification</label></div>
+
+      <!-- Radio Buttons -->
+
+      <h3>Radio Buttons</h3>
+      <div class="other">
+        <fieldset>
+          <legend>Pizza Crust</legend>
+          <ul>
+            <li><label><input name="example" type="radio"/>Thin</label></li>
+            <li><label><input name="example" type="radio"/>Regular</label></li>
+            <li><label><input name="example" type="radio"/>Deep dish</label></li>
+            <li><label><input name="example" type="radio"/>Cheesy crust</label></li>
+          </ul>
+        </fieldset>
+      </div>
+
+      <!-- Textbox -->
+
+      <h3>Textbox</h3>
+      <label for="id-textbox">Name</label>
+      <div class="control">
+        <input id="id-textbox" type="text"/>
+      </div>
+
+      <!-- Textarea -->
+
+      <h3>Textarea</h3>
+      <label for="id-textarea">Sample Description</label>
+      <div class="control">
+        <textarea id="id-textarea">
+          Some description
+        </textarea>
+      </div>
+
+      <!-- Select -->
+
+      <h3>Select</h3>
+      <label for="id-select">More Options</label>
+      <div class="control">
+        <select id="id-select">
+          <option>More option 1</option>
+          <option>More option 2</option>
+          <option>More option 3</option>
+          <option>More option 4</option>
+        </select>
+      </div>
+
+      <!-- File -->
+
+      <h3>File</h3>
+      <label for="id-file">Some File</label>
+      <div class="control">
+        <input id="id-file" type="file"/>
+      </div>
+
+      <!-- Details/Summary -->
+
+      <h3>Details/Summary</h3>
+      <div class="other">
+        <details>
+          <summary>Knock Knock!</summary>
+          <details>
+            <summary>Who's there?</summary>
+            <details>
+              <summary>Ken</summary>
+              <details>
+                <summary>Ken who?</summary>
+                Ken I come in? It's cold out here.
+              </details>
+            </details>
+          </details>
+        </details>
+      </div>
+
+    </div>
+
+  </main>
+  <footer>
+    <nav class="apg" aria-label="Related resources"><a href="https://w3c.github.io/aria-practices">W3C ARIA Authoring Practices</a> | <a href="https://accessibleit.disability.illinois.edu">DRES Accessible IT Group</a></nav>
+    <div class="copyright"><a href="https://illinois.edu"><img src="../../images/block-i.png" alt="University of Illinois"></a> Copyright © 2021 University of Illinois</div>
+  </footer>
+  <script>
+      var SkipToConfig =  {
+          'settings': {
+              'skipTo': {
+                  colorTheme: 'illinois',
+              }
+          }
+      };
+  </script>
+</body>
+</html>

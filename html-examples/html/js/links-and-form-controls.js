@@ -1,68 +1,42 @@
 /*
- *   File:   disclosure-button.js
+ *   File:   links-and-form-controls.js
  *
- *   Desc:   Disclosure button widget that implements ARIA Authoring Best Practices
+ *   Desc:   Setting options for focus styling
  */
 
 'use strict';
 
-/*
- *   @constructorDisclosureButton
- *
- *
- */
-class DisclosureFAQ {
-  constructor(buttonNode) {
-    this.buttonNode = buttonNode;
-    this.controlledNode = false;
+class labelFocus {
+  constructor() {
 
-    var id = this.buttonNode.getAttribute('aria-controls');
+    let exampleNode = document.getElementById('ex1');
 
-    if (id) {
-      this.controlledNode = document.getElementById(id);
-    }
+    this.labelNodes = exampleNode.querySelectorAll('.other input, .control input, .control button');
 
-    this.buttonNode.setAttribute('aria-expanded', 'false');
-    this.hideContent();
-
-    this.buttonNode.addEventListener('click', this.onClick.bind(this));
-  }
-
-  showContent() {
-    if (this.controlledNode) {
-      this.controlledNode.style.display = 'block';
+    for (let i = 0; i < this.labelNodes.length; i += 1) {
+      let labelNode = this.labelNodes[i];
+      labelNode.addEventListener('focus', this.onFocus.bind(this));
+      labelNode.addEventListener('blur', this.onBlur.bind(this));
     }
   }
 
-  hideContent() {
-    if (this.controlledNode) {
-      this.controlledNode.style.display = 'none';
-    }
+  onFocus(event) {
+    let tgt = event.currentTarget;
+    tgt.parentNode.classList.add('focus');
   }
 
-  toggleExpand() {
-    if (this.buttonNode.getAttribute('aria-expanded') === 'true') {
-      this.buttonNode.setAttribute('aria-expanded', 'false');
-      this.hideContent();
-    } else {
-      this.buttonNode.setAttribute('aria-expanded', 'true');
-      this.showContent();
-    }
+  onBlur(event) {
+    let tgt = event.currentTarget;
+    tgt.parentNode.classList.remove('focus');
   }
 
-  /* EVENT HANDLERS */
-
-  onClick() {
-    this.toggleExpand();
-  }
 }
 
-class optionsFAQ {
-  constructor(optionNode, disclosureFAQs) {
+
+class optionsHTML {
+  constructor(optionNode) {
 
     this.exampleNode = document.getElementById('ex1');
-
-    this.disclosureFAQs = disclosureFAQs;
 
     this.radioNodes = optionNode.querySelectorAll('input[type=radio]');
 
@@ -78,12 +52,6 @@ class optionsFAQ {
     }
   }
 
-  setButtonTabindex(value) {
-    for (let i = 0; i < this.disclosureFAQs.length; i += 1) {
-      this.disclosureFAQs[i].buttonNode.tabIndex = value;
-    }
-  }
-
   setKeyboardOption(inputNode) {
 
     for (let i = 0; i < this.radioNodes.length; i += 1) {
@@ -95,7 +63,6 @@ class optionsFAQ {
       }
     }
 
-    this.setButtonTabindex(0);
     this.exampleNode.classList.remove('no-focus');
     this.exampleNode.classList.remove('default-focus');
     this.exampleNode.classList.remove('author-focus');
@@ -152,21 +119,14 @@ class optionsFAQ {
 window.addEventListener(
   'load',
   function () {
-    let disclosureFAQs = [];
-    var buttons = document.querySelectorAll(
-      'dl.faq button[aria-expanded][aria-controls]'
-    );
-
-    for (var i = 0; i < buttons.length; i++) {
-      disclosureFAQs.push(new DisclosureFAQ(buttons[i]));
-    }
+    new labelFocus();
 
     var optionNode = document.querySelector(
       'section.options'
     );
 
     if (optionNode) {
-      new optionsFAQ(optionNode, disclosureFAQs);
+      new optionsHTML(optionNode);
     }
   },
   false

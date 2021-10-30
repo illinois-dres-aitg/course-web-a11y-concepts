@@ -1,0 +1,112 @@
+main a[onclick] {
+  text-decoration: underline;
+}
+
+main .control {
+  margin: 2px;
+  padding: 2px;
+}
+
+main .control label[for] {
+  display: block;
+}
+
+main .other ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+main .other li {
+  margin: 0;
+  padding: 0;
+  margin-left: 0.5em;
+}
+
+main .control details > details {
+  position: relative;
+  left: 1em;
+}
+
+main .author-focus .control,
+main .author-focus .other summary {
+  margin: 2px;
+  padding: 2px;
+  broder: 2px solid transparent;
+}
+
+main .author-hc-focus .control,
+main .author-hc-focus .other summary {
+  margin: 2px;
+  padding: 4px;
+}
+
+main .no-focus a:focus,
+main .no-focus button:focus,
+main .no-focus input:focus,
+main .no-focus select:focus,
+main .no-focus summary:focus,
+main .no-focus textarea:focus,
+main .author-focus a:focus,
+main .author-focus button:focus,
+main .author-focus input:focus,
+main .author-focus select:focus,
+main .author-focus summary:focus,
+main .author-focus textarea:focus,
+main .author-hc-focus a:focus,
+main .author-hc-focus button:focus,
+main .author-hc-focus input:focus,
+main .author-hc-focus select:focus,
+main .author-hc-focus summary:focus,
+main .author-hc-focus textarea:focus {
+  outline: none;
+}
+
+main .no-focus label:not([for]).focus,
+main .default-focus label:not([for]).focus {
+  padding: 4px 6px;
+  border: none;
+  border-radius: 0;
+  background-color: transparent;
+}
+
+main .no-focus a:focus,
+main .default-focus a:focus {
+  padding: 4px;
+  border: none;
+  background-color: transparent;
+}
+
+main .author-focus a {
+  padding: 2px;
+  border: 2px solid transparent;
+}
+
+main .author-focus .control.focus,
+main .author-focus .label.focus,
+main .author-focus .links a:focus,
+main .author-focus .other summary:focus,
+main .author-focus .links a:hover,
+main .author-focus .control:hover,
+main .author-focus .other summary:hover {
+  border-color: #13294b;
+  background-color: #def;
+  cursor: pointer;
+  outline: none;
+  max-width: 8em;
+}
+
+main .author-hc-focus .control.focus,
+main .author-hc-focus .label.focus,
+main .author-hc-focus .links a:focus,
+main .author-hc-focus .other summary:focus,
+main .author-hc-focus .control:hover,
+main .author-hc-focus .other summary:hover {
+  padding: 2px;
+  border: 2px solid #13294b;
+  background-color: #def;
+  cursor: pointer;
+  outline: none;
+  max-width: 8em;
+}
+

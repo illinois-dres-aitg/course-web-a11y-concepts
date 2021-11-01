@@ -15,7 +15,8 @@
 </head>
 <body>
   <header>
-    <div class="website">Web Accessibility Concepts</div>
+    <div class="course">Web Accessibility Concepts</div>
+    <div class="lecture"><a href="../../01-keyboard/">Keyboard Navigation and Focus Styling</a></div>
     <nav aria-label="Examples">
       <ul class="related">
         <li><a href="..">All Examples</a> | </li>
@@ -27,9 +28,9 @@
     </nav>
   </header>
   <main>
-    <h1>Keyboard Operation of Links and Form Controls</h1>
+    <h1>Links and Form Controls</h1>
 
-    <p>Demonstrates keyboard support built-in to browsers for the navigation and operation of standard HTML links and form controls and the experience .</p>
+    <p>Demonstrates keyboard support built-in to browsers for the navigation and operation of standard HTML links and form controls and the experience.  The example includes options to experience several keyboard focus styling techniques and their impact on perceivability of which element has keyboard focus.</p>
 
 
     <h2>Keyboard Support</h2>
@@ -136,27 +137,30 @@
       <!-- Buttons -->
 
       <h3>Buttons</h3>
-      <div class="control"><button>Action 1</button></div>
-      <div class="control"><input type="button" value="Action 2"/></div>
-      <div class="control"><input type="submit"/></div>
-      <div class="control"><input type="reset"/></div>
+      <div class="control">
+        <button>Action 1</button>
+        <input type="button" value="Action 2"/>
+        <input type="submit"/>
+        <input type="reset"/>
+      </div>
 
       <!-- Checkbox -->
 
       <h3>Checkbox</h3>
-      <div class="other"><label><input type="checkbox"/>Enable a notification</label></div>
+      <div class="control"><label class="inline"><input type="checkbox"/>Enable a notification</label></div>
 
       <!-- Radio Buttons -->
 
       <h3>Radio Buttons</h3>
-      <div class="other">
+      <div class="control">
         <fieldset>
           <legend>Pizza Crust</legend>
           <ul>
             <li><label><input name="example" type="radio"/>Thin</label></li>
             <li><label><input name="example" type="radio"/>Regular</label></li>
             <li><label><input name="example" type="radio"/>Deep dish</label></li>
-            <li><label><input name="example" type="radio"/>Cheesy crust</label></li>
+            <li><label
+              ><input name="example" type="radio"/>Cheesy crust</label></li>
           </ul>
         </fieldset>
       </div>
@@ -164,26 +168,24 @@
       <!-- Textbox -->
 
       <h3>Textbox</h3>
-      <label for="id-textbox">Name</label>
       <div class="control">
+        <label for="id-textbox">Name</label>
         <input id="id-textbox" type="text"/>
       </div>
 
       <!-- Textarea -->
 
       <h3>Textarea</h3>
-      <label for="id-textarea">Sample Description</label>
       <div class="control">
-        <textarea id="id-textarea">
-          Some description
-        </textarea>
+        <label for="id-textarea">Sample Description</label>
+        <textarea id="id-textarea" rows="10" cols="80">Some description</textarea>
       </div>
 
       <!-- Select -->
 
       <h3>Select</h3>
-      <label for="id-select">More Options</label>
       <div class="control">
+        <label for="id-select">More Options</label>
         <select id="id-select">
           <option>More option 1</option>
           <option>More option 2</option>
@@ -195,8 +197,8 @@
       <!-- File -->
 
       <h3>File</h3>
-      <label for="id-file">Some File</label>
       <div class="control">
+        <label for="id-file">Some File</label>
         <input id="id-file" type="file"/>
       </div>
 

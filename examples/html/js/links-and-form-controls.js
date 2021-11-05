@@ -40,6 +40,14 @@ class optionsHTML {
 
     this.radioNodes = optionNode.querySelectorAll('input[type=radio]');
 
+    if (window.location.hash) {
+      let value = window.location.hash.substring(1);
+      let button = document.querySelector('[value=' + value + ']');
+      if (button) {
+        button.checked = true;
+      }
+    }
+
     for (let i = 0; i < this.radioNodes.length; i += 1) {
       let radioNode = this.radioNodes[i];
       radioNode.addEventListener('click', this.onClick.bind(this));
@@ -50,6 +58,16 @@ class optionsHTML {
         this.setKeyboardOption(radioNode);
       }
     }
+
+  }
+
+  updateURL(option) {
+    let loc = window.location;
+    let url = loc.protocol + "//";
+    url += loc.hostname;
+    url += loc.pathname;
+    url += '#' + option;
+    loc.href = url;
   }
 
   setKeyboardOption(inputNode) {
@@ -66,29 +84,21 @@ class optionsHTML {
     this.exampleNode.classList.remove('no-focus');
     this.exampleNode.classList.remove('default-focus');
     this.exampleNode.classList.remove('author-focus');
-    this.exampleNode.classList.remove('author-hc-focus');
 
     switch(inputNode.value) {
-      case 'nokeyboard':
-        // disable keyboard support
-        this.setButtonTabindex(-1);
+      case 'disabled':
         this.exampleNode.classList.add('no-focus');
+        this.updateURL('disabled');
         break;
 
-      case 'keyboard+none':
-        this.exampleNode.classList.add('no-focus');
-        break;
-
-      case 'keyboard+default':
+      case 'default':
         this.exampleNode.classList.add('default-focus');
+        this.updateURL('default');
         break;
 
-      case 'keyboard+author':
+      case 'author':
         this.exampleNode.classList.add('author-focus');
-        break;
-
-      case 'keyboard+author+hc':
-        this.exampleNode.classList.add('author-hc-focus');
+        this.updateURL('author');
         break;
 
       default:

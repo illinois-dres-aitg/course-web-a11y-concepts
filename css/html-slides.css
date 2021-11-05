@@ -208,6 +208,23 @@ main figcaption {
     font-size 110%;
 }
 
+main figure {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  text-align: center;
+}
+
+main figure img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 75%;
+  padding: 4px;
+  background-color: #ddd;
+  border:  #ddd solid 2px;
+  border-radius: 5px;
+}
+
 #example {
     margin-top: 0.5em;
     padding: 0.5em;

@@ -32,13 +32,12 @@
 
     <p>Demonstrates keyboard support built-in to browsers for the navigation and operation of standard HTML links and form controls and the experience.  The example includes options to experience several keyboard focus styling techniques and their impact on perceivability of which element has keyboard focus.</p>
 
-
     <h2>Keyboard Support</h2>
-    <table class="keyboard" aria-label="Keyboard Support">
+    <table class="keyboard" aria-label="Keyboard Support" style="width: 30em">
       <thead>
         <tr>
           <th>Key</th>
-          <th style="width: 20em">Function</th>
+          <th style="width: 10em">Function</th>
         </tr>
       </thead>
       <tbody>
@@ -54,32 +53,26 @@
     </table>
 
     <h2>Example Options</h2>
-    <section class="options">
-      <fieldest>
+    <section class="options" style="width: 30em">
+      <fieldest >
         <legend>Keyboard Focus Styling Options</legend>
         <ul>
           <li>
             <label>
-              <input type="radio" name="faq-keyboard" value="keyboard+none" />
-              Keyboard support, but with no focus styling (e.g. CSS <code>outline</code> property set to <code>none</code>)
+              <input type="radio" name="keyboard" value="default" checked/>
+              Default browser focus styling
             </label>
           </li>
           <li>
             <label>
-              <input type="radio" name="faq-keyboard" value="keyboard+default" checked/>
-              Keyboard support, with default browser focus styling (browser default styles vary)
+              <input type="radio" name="keyboard" value="disabled" />
+              Disabled default focus styling
             </label>
           </li>
           <li>
             <label>
-              <input type="radio" name="faq-keyboard" value="keyboard+author" />
-              Keyboard support, with author focus styling
-            </label>
-          </li>
-          <li>
-            <label>
-              <input type="radio" name="faq-keyboard" value="keyboard+author+hc" />
-              Keyboard support, with author focus styling that supports operating system high contrast settings
+              <input type="radio" name="keyboard" value="author" />
+              Author focus styling
             </label>
           </li>
         </ul>
@@ -92,23 +85,9 @@
       <!-- Links -->
 
       <h3>Links</h3>
-      <details class="keyboard">
-        <summary id="id-kbd-links">Keyboard Support for activating links</summary>
-        <table class="keyboard" aria-labelledby="id-kbd-links">
-          <thead>
-            <tr>
-              <th>Key</th>
-              <th style="width: 20em">Function</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><kbd>Enter</kbd></td>
-              <td>Activate link.</td>
-            </tr>
-          </tbody>
-        </table>
-      </details>
+
+      <p>Links can be activated with <kbd>Enter</kbd> key.</p>
+
       <div class="links">
         <ul>
           <li><a href="#1">Some place 1</a></li>
@@ -137,6 +116,8 @@
       <!-- Buttons -->
 
       <h3>Buttons</h3>
+      <p>Links can be activated with <kbd>Enter</kbd> or the <kbd>Space</kbd> key.</p>
+
       <div class="control">
         <button>Action 1</button>
         <input type="button" value="Action 2"/>
@@ -147,11 +128,15 @@
       <!-- Checkbox -->
 
       <h3>Checkbox</h3>
+      <p>Checkboxes can be checked and unchecked with the <kbd>Space</kbd> key.</p>
+
       <div class="control"><label class="inline"><input type="checkbox"/>Enable a notification</label></div>
 
       <!-- Radio Buttons -->
 
       <h3>Radio Buttons</h3>
+      <p>Radio buttons can be checked using the <kbd>Up</kbd>, <kbd>Down</kbd>, <kbd>Left</kbd>, <kbd>Right</kbd> or the <kbd>Space</kbd> key.</p>
+
       <div class="control">
         <fieldset>
           <legend>Pizza Crust</legend>
@@ -178,7 +163,7 @@
       <h3>Textarea</h3>
       <div class="control">
         <label for="id-textarea">Sample Description</label>
-        <textarea id="id-textarea" rows="10" cols="80">Some description</textarea>
+        <textarea id="id-textarea" rows="10" cols="40">Some description</textarea>
       </div>
 
       <!-- Select -->

@@ -160,7 +160,7 @@
             <td>
               <ul>
                 <li>
-                  Buttons, radio button groups, checkboxes, text boxes, select and text area elements are some of the form controls found on web pages and by default are part of the tab sequence of the web page.
+                  Buttons, radio button groups, checkboxes, text boxes, select and text area are some of the form controls found on web pages and by default are part of the tab sequence of the web page.
                 </li>
                 <li>
                   <strong>Common Problem:</strong> Some web sites use custom controls, instead of the standard HTML form controls to create web forms.  These custom controls often do not include markup to include them in the tab sequence of the page.
@@ -177,51 +177,33 @@
   </slide>
 
   <slide>
-    <title>Sequential Navigation: Custom HTML Widgets</title>
+    <title>Activity 1: Practice using the keyboard using default focus styling</title>
     <contents>
-      <ul>
-        <li><a href="../html-examples/disclosure/disclosure-faq.html">Disclosure FAQs</a></li>
-        <li><a href="../html-examples/disclosure/disclosure-navigation.html">Disclosure Navigation Menu</a></li>
-        <li>Date pickers</li>
-        <li>Image carousels</li>
-      </ul>
-    </contents>
-    <transcript>
-      Something about the first item.
-      Something about the second item.
-      Something about the third item.
-      Something about the fourth item.
-    </transcript>
-  </slide>
 
+      <h2>Goal</h2>
+      <p>Increase awareness of keyboard navigation and default keyboard focus styling.</p>
 
-  <slide>
-    <title>Visual keyboard focus styling</title>
-    <contents>
+      <h2>Procedure</h2>
       <ul>
-        <li>Item 1</li>
-        <li>Item 2</li>
-        <li>Item 3</li>
-        <li>Item 4</li>
+        <li><a href="../examples/html/links-and-form-controls.html" target="_example1">Open the links and form controls example</a>.</li>
+        <li>Verify the <q>Default browser focus styling</q> is selected from the <q>Keyboard Focus Styling Options</q>.</li>
+        <li>Use the <kbd>Tab</kbd> and <kbd>Shift+Tab</kbd> to move focus between all the links and form controls.</li>
+        <li>Repeat the procedure with at least two of the following browsers:
+          <ul>
+            <li>Chrome/Edge/Opera (these all the same rendering engine)</li>
+            <li>Firefox</li>
+            <li>Safari</li>
+          </ul>
+        </li>
       </ul>
-    </contents>
-    <transcript>
-      Something about the first item.
-      Something about the second item.
-      Something about the third item.
-      Something about the fourth item.
-    </transcript>
-  </slide>
 
-  <slide>
-    <title>Browser differences in keyboard focus styling</title>
-    <contents>
+      <h2>Reflection Questions</h2>
       <ul>
-        <li>Item 1</li>
-        <li>Item 2</li>
-        <li>Item 3</li>
-        <li>Item 4</li>
+        <li>Where there any links or form controls that you could not access with the keyboard?</li>
+        <li>What are the differences you observed in how links and form control focus are styled?</li>
+        <li>Did you observe any differences between how browers style focus?</li>
       </ul>
+
     </contents>
     <transcript>
       Something about the first item.
@@ -232,14 +214,51 @@
   </slide>
 
   <slide>
-    <title>High contrast settings and keyboard focus styling</title>
+    <title>Activity 2: Practice using the keyboard when focus styling is disabled</title>
     <contents>
+
+      <h2>Goal</h2>
+      <p>Increase awareness of keyboard navigation when the default keyboard style has been disabled.  This condition often happens when a website uses a "reset" CSS stylesheet for decreasing styling incompatibilities between browsers and versions of the same browser.</p>
+
+      <h2>Procedure</h2>
       <ul>
-        <li>Item 1</li>
-        <li>Item 2</li>
-        <li>Item 3</li>
-        <li>Item 4</li>
+        <li><a href="../examples/html/links-and-form-controls.html#disabled" target="_example2">Open the links and form controls example</a>.</li>
+        <li>Verify the <q>Disabled default focus styling</q> is selected from the <q>Keyboard Focus Styling Options</q>.</li>
+        <li>Use the <kbd>Tab</kbd> and <kbd>Shift+Tab</kbd> to move focus between all the links and form controls.</li>
       </ul>
+
+      <h2>Reflection Question</h2>
+      <ul>
+        <li>How could you tell with link or control had focus?</li>
+      </ul>
+    </contents>
+    <transcript>
+      Something about the first item.
+      Something about the second item.
+      Something about the third item.
+      Something about the fourth item.
+    </transcript>
+  </slide>
+
+  <slide>
+    <title>Activity 3: Practice using the keyboard when author intentially styles focus</title>
+    <contents>
+
+      <h2>Goal</h2>
+      <p>Increase awareness of keyboard navigation when designers and developers intentionally style focus to be more perceivable by implementing a focus border around all form controls and in the case of radio buttons and checkboxes also including the label.</p>
+
+      <h2>Procedure</h2>
+      <ul>
+        <li><a href="../examples/html/links-and-form-controls.html#author" target="_example3">Open the links and form controls example</a>.</li>
+        <li>Verify the <q>Author focus styling</q> is selected from the <q>Keyboard Focus Styling Options</q>.</li>
+        <li>Use the <kbd>Tab</kbd> and <kbd>Shift+Tab</kbd> to move focus between all the links and form controls.</li>
+      </ul>
+
+      <h2>Reflection Question</h2>
+      <ul>
+        <li>When the author intentionally styles the keyboard focus how does that change your ability to perceive keyboard focus?</li>
+      </ul>
+
     </contents>
     <transcript>
       Something about the first item.
@@ -252,11 +271,19 @@
   <slide>
     <title>Best practices in keyboard focus styling</title>
     <contents>
+
+      <figure>
+        <img src="images\focus-styling.png" alt="" align="middle"/>
+        <caption>Screen shot of focus styling best practices for radio buttons</caption>
+      </figure>
+
+      <h2>Best Practices</h2>
       <ul>
-        <li>Item 1</li>
-        <li>Item 2</li>
-        <li>Item 3</li>
-        <li>Item 4</li>
+        <li>Focus border of at least 2 pixels in width.</li>
+        <li>Spacing of at least 2 pixels between border and control.</li>
+        <li>Change background color of the control slightly.</li>
+        <li>For radio buttons and checkboxes, the border should include the label.</li>
+        <li>Hover styling should match focus styling.</li>
       </ul>
     </contents>
     <transcript>
@@ -267,6 +294,64 @@
     </transcript>
   </slide>
 
+  <slide>
+    <title>Custom User Interface Elements</title>
+    <contents>
+      <ul>
+        <li>
+          HTML links and form controls have accessibility built-in to them.  That is why it is always better to use them.
+        </li>
+        <li>
+          When standard controls are not available for a specific user experience, designers and developers use HTML, CSS and Javascript to create custom user interface elements.  Common examples include:
+          <ul>
+            <li>Hide/Show content (e.g. Accordions)</li>
+            <li>Navigation menus</li>
+            <li>Date pickers</li>
+            <li>Image carousels</li>
+            <li>Media players</li>
+          </ul>
+        </li>
+        <li>
+          <a href="https://w3.org/TR/wai-aria">Accessible Rich Internet Applications (ARIA) specification</a> was created to describe the user interface elements to users of assistive technologies.
+        </li>
+        <li>The <a href="https://w3c.github.io/aria-practices/">ARIA Authoring Practices</a> is designed to help designers and developers learn how to use ARIA to describe the interaction features to assistive technologies.
+        </li>
+        <li>
+          People not familiar with the coding of web technologies cannot really tell the differences between standard and custom user interface elements.
+        </li>
+      </ul>
+    </contents>
+  </slide>
+
+  <slide>
+    <title>Activity 4: Practice using the keyboard for custom user interface elements</title>
+    <contents>
+
+      <h2>Keyboard board accessibility of custom inerface elements</h2>
+
+      <h2>Goal</h2>
+      <p>Increase awareness of keyboard navigation when web pages use custom user interface elements like menus, hide/show content and dialog boxes.</p>
+
+      <h2>Procedure</h2>
+      <ul>
+        <li><a href="../examples/html/links-and-form-controls.html#author" target="_example3">Open the FAQ example</a>.</li>
+        <li>Verify the <q>Author focus styling</q> is selected from the <q>Keyboard Focus Styling Options</q>.</li>
+        <li>Use the <kbd>Tab</kbd> and <kbd>Shift+Tab</kbd> to move focus between all the links and form controls.</li>
+      </ul>
+
+      <h2>Reflection Question</h2>
+      <ul>
+        <li>When the author intentionally styles the keyboard focus how does that change your ability to perceive keyboard focus?</li>
+      </ul>
+
+    </contents>
+    <transcript>
+      Something about the first item.
+      Something about the second item.
+      Something about the third item.
+      Something about the fourth item.
+    </transcript>
+  </slide>
 
   <slide>
     <title>Bypass blocks of content with "Skip To Main" link.</title>

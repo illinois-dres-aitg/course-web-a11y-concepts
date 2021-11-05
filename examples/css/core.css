@@ -1,7 +1,7 @@
 /* Style for syntax highlighting */
 body {
   margin:  0;
-  width: 50em;
+  max-width: 50em;
   font-family: Montserrat, sans-serif;
 }
 

@@ -2,7 +2,7 @@
 <html lang="en">
    <head>
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-      <title>Slide 8: Best practices in keyboard focus styling</title>
+      <title>Slide 8: Custom User Interface Elements</title>
       <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
       <link rel="stylesheet" type="text/css" href="../css/bootstrap-theme.min.css">
       <link rel="stylesheet" type="text/css" href="../css/bootstrap-accessibility.css">
@@ -28,7 +28,7 @@
                   <li><a id="ID_SLIDE_NEXT" href="slide9.html" title="Slide 9">
                         Next
                       </a></li>
-                  <li><a id="ID_SLIDE_LAST" href="slide13.html" title="Slide 13">
+                  <li><a id="ID_SLIDE_LAST" href="slide14.html" title="Slide 14">
                         Last
                       </a></li>
                </ul>
@@ -44,12 +44,29 @@
          <div class="row">
             <div class="col-md-1"></div>
             <div class="col-md-9">
-               <h1 id="h1_title" class="title">Best practices in keyboard focus styling</h1>
+               <h1 id="h1_title" class="title">Custom User Interface Elements</h1>
                <ul>
-                  <li>Item 1</li>
-                  <li>Item 2</li>
-                  <li>Item 3</li>
-                  <li>Item 4</li>
+                  <li>
+          HTML links and form controls have accessibility built-in to them.  That is why it is always better to use them.
+        </li>
+                  <li>
+          When standard controls are not available for a specific user experience, designers and developers use HTML, CSS and Javascript to create custom user interface elements.  Common examples include:
+          <ul>
+                        <li>Hide/Show content (e.g. Accordions)</li>
+                        <li>Navigation menus</li>
+                        <li>Date pickers</li>
+                        <li>Image carousels</li>
+                        <li>Media players</li>
+                     </ul>
+                  </li>
+                  <li>
+          <a href="https://w3.org/TR/wai-aria">Accessible Rich Internet Applications (ARIA) specification</a> was created to describe the user interface elements to users of assistive technologies.
+        </li>
+                  <li>The <a href="https://w3c.github.io/aria-practices/">ARIA Authoring Practices</a> is designed to help designers and developers learn how to use ARIA to describe the interaction features to assistive technologies.
+        </li>
+                  <li>
+          People not familiar with the coding of web technologies cannot really tell the differences between standard and custom user interface elements.
+        </li>
                </ul>
             </div>
             <div class="col"></div>
@@ -63,12 +80,9 @@
                   <summary id="id-slide-transcript-button" class="btn-primary btn-sm" title="Audio transcript of the portion of the video for this slide">
                           Audio Transcript
                         </summary>
-                  <div class="slide-transcript">
-      Something about the first item.
-      Something about the second item.
-      Something about the third item.
-      Something about the fourth item.
-    </div>
+                  <div class="notranscript">
+                              No transcript found for this slide.
+                            </div>
                </details>
             </div>
             <div class="col"></div>
